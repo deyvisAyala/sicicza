@@ -21,31 +21,22 @@
                   <div class="col-lg-12">
                       <section class="panel" style="background-color: #d9e6f2  ">
                           <header class="panel-heading">
-                              Filtro del reporte
+                             Reporte de Clientes
                           </header>
 
                           <div class="panel-body">
                               <div class="form">
                                   
-                                 {!! Form::open(['url'=>['reporteCompra2'],'method'=>'POST','target'=>'_blank']) !!}
+                                 {!! Form::open(['url'=>['reporteCliente'],'method'=>'POST','target'=>'_blank']) !!}
                                      
                                      <div class="box-header">                            
                           </div><!-- /.box-header -->
                           <div class="box-body pad">
-                              <div class="col-md-3">    
-                              {!!Form::label('lbFecha','Fecha Inicial')!!}                          
-                              <input id="fechaInicial" name="fechaInicial" type="date" required="true" class="form-control" value="<?php echo dameFecha(date("Y-m-d"),0);?>" max="<?php echo dameFecha(date("Y-m-d"),0);?>" >
-                            </div>                            
-                            <div class="col-md-3">      
-                            {!!Form::label('lbFecha','Fecha Final')!!}                        
-                              <input id="fechaFinal" name="fechaFinal" type="date" required="true" class="form-control" value="<?php echo dameFecha(date("Y-m-d"),0);?>" max="<?php echo dameFecha(date("Y-m-d"),0);?>" >
-                            </div>
                               
-                              <br>  
                                       
                                         
-                                      <br><br><br>
-                              {!! Form::submit('Generar Informe',['class'=>'btn btn-info']) !!}  </form>
+                                      <br>
+                              {!! Form::submit('Generar Informe de Clientes',['class'=>'btn btn-info']) !!}  </form>
                               </div>
 
 
@@ -57,31 +48,30 @@
                <!-- *****************************    segundo    formulario    **************************-->
               
 
-               <div class="row">
+              <div class="row">
                   <div class="col-lg-12">
                       <section class="panel" style="background-color: #d9e6f2  ">
                           <header class="panel-heading">
-                              Filtro del reporte por proveedor
+                             Reporte de Cliente con Referencia
                           </header>
 
                           <div class="panel-body">
                               <div class="form">
                                   
-                                 {!! Form::open(['url'=>['reporteCompra3'],'method'=>'POST','target'=>'_blank']) !!}
-                                     
-                                     <div class="box-header">                            
+                                 {!! Form::open(['url'=>['reporteCliente2'],'method'=>'POST','target'=>'_blank']) !!}
+                           <div class="box-header">                            
                           </div><!-- /.box-header -->
                           <div class="box-body pad">
                               <div class="form-group ">
-                         <div class=" col-lg-1" ><td><b>Seleccione proveedor:</b></div>
+                         <div class=" col-lg-1" ><td><b>Seleccione cliente:</b></div>
                             <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
                                          
                              <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
                            
                                        <select class="form-control" name="idMarca">
                                
-                                        @foreach($Vproveedor as $mar)
-                                <option  value="{{ $mar->id }}" >{{ $mar->nomProveedor }}</option>
+                                        @foreach($cliente as $mar)
+                                <option  value="{{ $mar->id }}" >{{ $mar->nomCliente }}</option>
                                  
                             @endforeach
                                                        
@@ -93,7 +83,7 @@
                                       
                                         
                                       <br><br><br>
-                              {!! Form::submit('Generar Informe',['class'=>'btn btn-info']) !!}  </form>
+                              {!! Form::submit('Generar Informe de Clientes',['class'=>'btn btn-info']) !!}  </form>
                               </div>
 
 
@@ -102,6 +92,8 @@
                       </section>
                   </div>
               </div>
+
+               
               <!-- page end-->
               
           </section>

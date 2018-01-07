@@ -49,12 +49,17 @@ Route::get('/home', 'HomeController@index');
 Route::match(['get','post'],'reporteProvee','ProveedorController@reporte');
 Route::match(['get','post'],'reporteCompra','createcompraController@create2');
 Route::match(['get','post'],'reporteCompra2','createcompraController@reporte');
-
-//deyvis
 Route::resource('marca', 'marcaController');
 Route::match(['get','post'],'buscarMarca/{id}','ventasController@buscarXMarca');
 Route::match(['get','post'],'llenarProducto/{id}','ventasController@llenarXProducto');
 Route::match(['get','post'],'capCre/{id}','ventasController@capacidad');
+Route::match(['get','post'],'reporteCompra3','createcompraController@reporte2');
+Route::match(['get','post'],'reporteClienteA','ClienteController@vistaClienteReporte');
+Route::match(['get','post'],'reporteCliente','ClienteController@reporte');
+Route::match(['get','post'],'reporteCliente2','ClienteController@reporte2');
+Route::match(['get','post'],'reporteKardex','ProductoController@reporte');
+Route::match(['get','post'],'reporteCompra2','createcompraController@reporte');
+//deyvis
 
 //tony
 

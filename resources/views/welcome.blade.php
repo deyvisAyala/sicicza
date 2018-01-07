@@ -183,6 +183,19 @@ footer {
                           <span>INICIO</span>
                       </a>
                   </li>
+                  
+                     <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i  class="fa fa-file-text" aria-hidden="true"></i>
+                          <span>MARCAS</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="/sicicza/public/marca/create">REGISTRAR</a></li>                          
+                          <li><a class="" href="/sicicza/public/marca">VER MARCAS</a></li>
+                          <li><a class="" href="/sicicza/public/reporteProvee" target="_blank" >REPORTE MARCAS</a></li>
+                      </ul>
+                  </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
@@ -212,14 +225,14 @@ footer {
                   </li>       
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
-                          <i class="icon_desktop"></i>
+                          <i i class="fa fa-reddit" aria-hidden="true"></i>
                           <span>CLIENTES</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
                           <li><a class="" href="/sicicza/public/cliente/create">REGISTRAR</a></li>
                           <li><a class="" href="/sicicza/public/cliente">VER CLIENTES</a></li>
-                          <li><a class="" href="/sicicza/public/cartera">CARTERA CLIENTES</a></li>
+                          <li><a class="" href="/sicicza/public/reporteClienteA">REPORTE CLIENTES</a></li>
                       </ul>
                   </li>
                      
@@ -422,6 +435,8 @@ footer {
   $('.date_time').mask('00/00/0000 00:00:00');
   $('.cep').mask('00000-000');
   $('.phone').mask('0000-0000');
+  $('.dui').mask('00000000-0');
+  $('.nit').mask('0000-000000-000-0');
   $('.phone_with_ddd').mask('(00) 0000-0000');
   $('.phone_us').mask('(000) 000-0000');
   $('.mixed').mask('AAA 000-S0S');

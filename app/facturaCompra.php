@@ -17,13 +17,27 @@ class facturaCompra extends Model
  
 
 
-	public static function sacarComprasPorFecha($finicial,$ffinal){      
-		return DB::table('factura_compras')
+  public static function sacarComprasPorFecha($finicial,$ffinal){      
+    return DB::table('factura_compras')
       
        
         
           ->where('factura_compras.fechacompra','>=',$finicial )
        ->where('factura_compras.fechacompra','<=',$ffinal )
+            
+            ->select('factura_compras.*')
+            ->orderBy('factura_compras.id')
+            ->get();
+   }
+
+   public static function sacarComprasXproveedor($idPro){      
+    return DB::table('factura_compras')
+      
+       ->join('detalles_compras', 'detalles_compras.idcomps', '=', 'factura_compras.id')
+       ->join('productos', 'detalles_compras.idprods', '=', 'productos.id')
+        
+          ->where('productos.idProveedor','=',$idPro )
+       
             
             ->select('factura_compras.*')
             ->orderBy('factura_compras.id')

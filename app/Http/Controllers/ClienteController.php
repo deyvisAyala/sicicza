@@ -83,4 +83,48 @@ class ClienteController extends Controller
         //$aux11= \App\listaDeCompra::auxComp($id);
         return view('clientes.referencia',compact('Aux','referencia'));
     }
+         public function vistaClienteReporte() {
+        $cliente= cliente::All();
+    
+        return view('clientes.vistaReporte',compact('cliente'));  
+    }
+
+
+
+    public function reporte2(request $request)
+    {
+        $idPro = $request['idMarca'];
+        $clientes = cliente::sacarReferenciasXcliente($idPro);
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.clienteConRef";
+      $view =  \View::make($vistaurl, compact('clientes', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Clientes '.$date.'.pdf');
+    
+    }
+
+
+     public function reporte(request $request)
+    {
+       
+       
+        $clientes= cliente::All();
+        
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.clientes";
+      $view =  \View::make($vistaurl, compact('clientes', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Clientes '.$date.'.pdf');
+    }
 }

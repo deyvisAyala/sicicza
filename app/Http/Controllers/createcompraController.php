@@ -130,4 +130,23 @@ class createCompraController extends Controller
     }
 
 
+
+     public function reporte2(request $request)
+    {
+        $idPro = $request['idMarca'];
+       
+        $compra= \App\facturaCompra::sacarComprasXproveedor($idPro);
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.compraProve";
+      $view =  \View::make($vistaurl, compact('compra', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Compras '.$date.'.pdf');
+    }
+
 }
