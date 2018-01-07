@@ -59,6 +59,7 @@ Route::match(['get','post'],'reporteCliente','ClienteController@reporte');
 Route::match(['get','post'],'reporteCliente2','ClienteController@reporte2');
 Route::match(['get','post'],'reporteKardex','ProductoController@reporte');
 Route::match(['get','post'],'reporteCompra2','createcompraController@reporte');
+
 //deyvis
 
 //tony

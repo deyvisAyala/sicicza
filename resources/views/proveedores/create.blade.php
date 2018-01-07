@@ -11,7 +11,7 @@
           <h3 class="page-header"><i class="fa fa-truck "></i> Proveedores</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-eye"></i><a href="/sicicza/public/proveedor">Ver proveedores</a></li>
+            <li><i class="fa fa-eye"></i><a href="/sicicza/public/proveedor">Ver Proveedores</a></li>
             
           </ol>
         </div>
