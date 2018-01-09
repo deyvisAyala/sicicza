@@ -220,6 +220,7 @@ footer {
                                                   
                           <li><a class="" href="/sicicza/public/producto/create">REGISTRO </a></li>
                           <li><a class="" href="/sicicza/public/producto">VER PRODUCTOS</a></li>
+                          <li><a class="" href="/sicicza/public/reporteInventario">VER REPORTES</a></li>
                          
                       </ul>
                   </li>       
@@ -232,6 +233,7 @@ footer {
                       <ul class="sub">
                           <li><a class="" href="/sicicza/public/cliente/create">REGISTRAR</a></li>
                           <li><a class="" href="/sicicza/public/cliente">VER CLIENTES</a></li>
+                          <li><a class="" href="/sicicza/public/creditos">VER CREDITOS</a></li>
                           <li><a class="" href="/sicicza/public/reporteClienteA">REPORTE CLIENTES</a></li>
                       </ul>
                   </li>
@@ -259,7 +261,7 @@ footer {
                       <ul class="sub">
                           <li><a class="" href="/sicicza/public/ventas/create">REGISTRAR VENTA</a></li>
                           <li><a class="" href="/sicicza/public/ventas">VER VENTAS</a></li>
-                           <li><a class="" href="/sicicza/public/Factura">VER FACTURAS</a></li>
+                           <li><a class="" href="/sicicza/public/reporteVenta">REPORTES</a></li>
                       </ul>
                   </li>
                              

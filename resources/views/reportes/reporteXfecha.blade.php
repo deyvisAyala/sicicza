@@ -90,23 +90,26 @@ table tr:nth-child(2n-1) td {
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div><!-- /.box-header -->
       <div class="box-body">
-        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE PROVEEDORES ACTIVOS</h3></div>
+        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE VENTAS</h3></div>
         <table class="table-wrapper" >
            <thead>
             <tr>
+                  <th style="color: black">Numero Factura</th>
+                  <th style="color: black">Cliente</th>
                   <th style="color: black">Descripcio</th>
-                  <th style="color: black">numFactura</th>
-                  <th style="color: black">fecha</th>
                   <th style="color: black">Monto</th>
+                  <th style="color: black">Fecha</th>
+                  
             </tr>
           </thead>
           <tbody>
-            @foreach($compra as $prove) 
+            @foreach($ventas as $prove) 
             <tr>
-             <td>{{$prove->tipopago}}</td>
-           <td>{{$prove->nfactura}}</td>
-           <td>{{$prove->fechacompra}}</td>
-           <td>{{$prove->montocompra}}</td>
+             <td>{{$prove->numfactura}}</td>
+           <td>{{$prove->nomCliente}}</td>
+           <td>{{$prove->descripcion}}</td>
+           <td>{{$prove->montov}}</td>
+           <td>{{$prove->fechav}}</td>
             </tr>
           @endforeach
         </tbody>

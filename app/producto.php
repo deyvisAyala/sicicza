@@ -60,6 +60,18 @@ class producto extends Model
  
    }
 
+   public static function sacarProductosActivos(){
+       return DB::table('productos')
+            
+
+            ->join('proveedors', 'proveedors.id', '=', 'productos.idProveedor')
+            ->where('productos.estProducto','=','true')
+            ->select('productos.*','proveedors.nomProveedor')
+            ->orderBy('productos.id')
+            ->get();
+ 
+   }
+
  
 }
 

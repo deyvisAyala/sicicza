@@ -59,13 +59,20 @@ Route::match(['get','post'],'reporteCliente','ClienteController@reporte');
 Route::match(['get','post'],'reporteCliente2','ClienteController@reporte2');
 Route::match(['get','post'],'reporteKardex','ProductoController@reporte');
 Route::match(['get','post'],'reporteCompra2','createcompraController@reporte');
+Route::match(['get','post'],'detalleVenta','ventasController@detalle');
 
 //deyvis
 Route::resource('creditos', 'creditosController');
 Route::match(['get','post'],'creditosHistorial/{id}','creditosController@historial');
 Route::match(['get','post'],'pagarCredito/{id}','creditosController@pagarCredito');
+
+
+
 //tony
-Route::match(['get','post'],'detalleVenta','ventasController@detalle');
+Route::match(['get','post'],'reporteVenta','ventasController@vistaVentasReporte');
+Route::match(['get','post'],'reporteVenta2','ventasController@reporteVentas');
+Route::match(['get','post'],'reporteInventario','ProductoController@vistaVentasReporte');
+Route::match(['get','post'],'reporteInventario2','ProductoController@reporteInven');
 
 });
 

@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Reporte Proveedores</title>
   <style>
-  footer {
+ 
+   footer {
       position: fixed;
       left: 0px;
       bottom: -50px;
@@ -32,6 +33,7 @@ body {
     margin: 0;
     padding: 0;
     color: #777777;
+
   }
 table {
     border-collapse: collapse;
@@ -90,27 +92,51 @@ table tr:nth-child(2n-1) td {
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div><!-- /.box-header -->
       <div class="box-body">
-        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE PROVEEDORES ACTIVOS</h3></div>
+        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE INVENTARIO</h3></div>
         <table class="table-wrapper" >
            <thead>
             <tr>
-                  <th style="color: black">Descripcio</th>
-                  <th style="color: black">numFactura</th>
-                  <th style="color: black">fecha</th>
-                  <th style="color: black">Monto</th>
+                  <th style="color: black">Código</th>
+                  <th style="color: black">Nombre</th>
+                  <th style="color: black">Proveedor</th>
+                  <th style="color: black">Costo Promedio</th>
+                  <th style="color: black">% Ganancia</th>
+                  <th style="color: black">Existencia</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($compra as $prove) 
+            @foreach($productos as $prove) 
             <tr>
-             <td>{{$prove->tipopago}}</td>
-           <td>{{$prove->nfactura}}</td>
-           <td>{{$prove->fechacompra}}</td>
-           <td>{{$prove->montocompra}}</td>
+             <td>{{$prove->id}}</td>
+           <td>{{$prove->nomProducto}}</td>
+           <td>{{$prove->nomProveedor}}</td>
+           <td>{{$prove->cPromedio}}</td>
+           <td>{{$prove->preProducto}}</td>
+           <td>{{$prove->existencia}}</td>
             </tr>
           @endforeach
         </tbody>
+
+        
+
       </table>
+       <footer>
+    <table>
+    
+      <tr>
+        <td>
+            <p class="izq">
+              Comercial Santa Clarita S.A de C.V
+            </p>
+        </td>
+        <td>
+          <p class="page">
+            Página
+          </p>
+        </td>
+      </tr>
+    </table>
+  </footer>
      </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div>

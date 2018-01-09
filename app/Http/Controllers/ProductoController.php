@@ -28,7 +28,7 @@ public function index() {
     \App\producto::create([
             //modelo                //la vista create
             'nomProducto' => $request['nomProducto'],  
-            'catProducto' => $request['catProducto'],
+            'catProducto' => $request['catProducto'],//DESCRIPCION DEL PRODUCTO
             'preProducto' => $request['preProducto'], 
             'idProveedor' => $request['idProveedor'], 
             'idMarca' => $request['idMarca'],  
@@ -83,6 +83,57 @@ public function index() {
 
     return redirect('/producto');
     }
+
+
+
+    //////////////////////ESPACIO PARA LLAMADO Y CONSULTA DE REPORTES/////////////////////////////////
+
+            public function vistaVentasReporte() {
+        //$aux11= \App\listaDeCompra::All();
+       
+        //return view('compras.create',compact('proveedor','aux11'));   
+        //return view('productos.create',compact('marca'));   */
+        return view('productos.reporteVista');
+
+    }
+
+
+ public function reporteInven(request $request)
+    {
+       
+        $productos= \App\producto::sacarProductosActivos();
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.reporteInventario";
+      $view =  \View::make($vistaurl, compact('productos', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Inventario '.$date.'.pdf');
+    }
+
+
+
+    /* public function reporte2(request $request)
+    {
+        $idPro = $request['idMarca'];
+       
+        $ventas= \App\facturaCompra::sacarComprasXproveedor($idPro);
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.reporteXfecha";
+      $view =  \View::make($vistaurl, compact('ventas', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Compras '.$date.'.pdf');
+    } */             
 }
 
 

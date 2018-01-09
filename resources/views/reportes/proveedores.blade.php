@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <title>Reporte Proveedores</title>
   <style>
+  footer {
+      position: fixed;
+      left: 0px;
+      bottom: -50px;
+      right: 0px;
+      height: 40px;
+      border-bottom: 2px solid #ddd;
+    }
+    footer .page:after {
+      content: counter(page);
+    }
+    footer table {
+      width: 100%;
+    }
+    footer p {
+      text-align: right;
+    }
+    footer .izq {
+      text-align: left;
+    }
 body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
@@ -59,9 +79,8 @@ table tr:nth-child(2n-1) td {
     <div class="box-body">
       <div class="box-header with-border">
         <div style="position: absolute;left: 220px; top: 40px; z-index: 1;"><h2>Comercial Santa Clarita S.A de C.V</h2></div>
-        <div style="position: absolute;left: 280px; top: 80px; z-index: 1;">CIUDAD CENTENARIA</div>
-        <div style="position: absolute;left: 350px; top: 120px; z-index: 1;"><h5>Despacho Alcalde Telefax 2362-6700</h5></div>
-        <div style="position: absolute;left: 385px; top: 133px; z-index: 1;"><h5>Gerencia Teléfono 2362-6708</h5></div>
+        <div style="position: absolute;left: 280px; top: 80px; z-index: 1;">CASA MATRIZ</div>
+        <div style="position: absolute;left: 385px; top: 133px; z-index: 1;"><h5>Teléfono 2462-6758</h5></div>
         <div style="position: absolute;left: 120px; top: 133px; z-index: 1;"><h5>Depto. Zacatecoluca, El Salvador, C.A.</h5></div>
         <HR style="position: absolute;left: 23px; top: 163px; z-index: 1; color:blue;" width=90%>
         <div style="position: absolute;left: 550px; top: 175px; z-index: 1;">Fecha:  <?=  $date; ?> </div>

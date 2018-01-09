@@ -66,13 +66,8 @@ class ventasController extends Controller
                 'idfactura' => $ids,
 
             ]);
-                           
-            
+          
     }
-
-        
-        
-
 
 
   $eAux =\App\tempoventa::All();
@@ -184,6 +179,57 @@ class ventasController extends Controller
         return view('ventas.detalle',compact('venta'));
     }
 
+
+
+//////////////////////ESPACIO PARA LLAMADO Y CONSULTA DE REPORTES/////////////////////////////////
+
+            public function vistaVentasReporte() {
+        //$aux11= \App\listaDeCompra::All();
+       
+        //return view('compras.create',compact('proveedor','aux11'));   
+        //return view('productos.create',compact('marca'));   */
+        return view('ventas.reporteVista');
+
+    }
+
+
+ public function reporteVentas(request $request)
+    {
+        $finicio = $request['fechaInicial'];
+        $ffinal = $request['fechaFinal'];
+        $ventas= \App\facturaVenta2::sacarVentasPorFecha($finicio,$ffinal);
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.reporteXfecha";
+      $view =  \View::make($vistaurl, compact('ventas', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Ventas '.$date.'.pdf');
+    }
+
+
+
+    /* public function reporte2(request $request)
+    {
+        $idPro = $request['idMarca'];
+       
+        $ventas= \App\facturaCompra::sacarComprasXproveedor($idPro);
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.reporteXfecha";
+      $view =  \View::make($vistaurl, compact('ventas', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Compras '.$date.'.pdf');
+    } */             
 
     
 }
