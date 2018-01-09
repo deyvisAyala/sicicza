@@ -61,8 +61,11 @@ Route::match(['get','post'],'reporteKardex','ProductoController@reporte');
 Route::match(['get','post'],'reporteCompra2','createcompraController@reporte');
 
 //deyvis
-
+Route::resource('creditos', 'creditosController');
+Route::match(['get','post'],'creditosHistorial/{id}','creditosController@historial');
+Route::match(['get','post'],'pagarCredito/{id}','creditosController@pagarCredito');
 //tony
+Route::match(['get','post'],'detalleVenta','ventasController@detalle');
 
 });
 

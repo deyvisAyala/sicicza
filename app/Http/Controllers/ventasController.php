@@ -21,11 +21,9 @@ class ventasController extends Controller
 
     }
     public function index() {  
-        //$producto =\App\producto::proPro();
-        //$pro =\App\producto::proPro();
-       // $proveedor =\App\proveedor::All();
-        $marca =\App\marca::All();
-        return view('ventas.create',compact('marca'));       
+       
+        $ventas =\App\facturaVenta2::All();
+        return view('ventas.index',compact('ventas'));       
     }
 
 
@@ -117,7 +115,7 @@ class ventasController extends Controller
                     \App\pago::create([
                 //'' => $valor->preciocomp3,
                 'fecPago' => $dt,
-                'pendiente' => $request['total'],
+                'pendiente' => $request['formap']*$request['cuotas'],
                 'monto' => $request['cuotas'],
                 'mora' => 0,
                 'cuotas' =>$request['formap'],
@@ -177,6 +175,14 @@ class ventasController extends Controller
  
     return response()->json($cliente[0]);
   }
+
+
+  public function show($id)
+    {
+       
+       $venta= \App\detalleVenta::sacarVentasPorFactura($id);
+        return view('ventas.detalle',compact('venta'));
+    }
 
 
     

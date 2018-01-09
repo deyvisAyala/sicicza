@@ -18,8 +18,22 @@ class pago extends Model
             ->where('pagos.estado','=',true)
 
             ->select('factura_venta2s.*',  'pagos.*')
-            ->orderBy('factura_venta2s.id')
+            ->orderBy('pagos.id')
             ->get();
  
    }
+    public static function pagosXCliente2($id,$estado){
+       return DB::table('factura_venta2s')
+            ->join('pagos', 'pagos.idfactura', '=', 'factura_venta2s.id')
+              ->join('clientes', 'clientes.id', '=', 'factura_venta2s.idcliente')
+            ->where('factura_venta2s.idcliente','=',$id)
+            ->where('pagos.estado','=',$estado)
+
+            ->select('factura_venta2s.*', 'clientes.*' ,'pagos.*')
+            ->orderBy('pagos.id')
+            ->get();
+ 
+   }
+ 
+ 
 }

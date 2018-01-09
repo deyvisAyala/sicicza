@@ -17,11 +17,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-truck "></i>Ventas</h3>
+          <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a >Ver Ventas</a></li>
+            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create">Regitrar cliente</a></li>
           </ol>
         </div>
       </div>
@@ -45,26 +45,48 @@
               <thead style="background-color: SteelBlue">
                 <tr>
                   <th style="color: black">#</th>
-                  <th style="color: black">Descripcion</th>
-                  <th style="color: black">Monto</th>
-                  <th style="color: black">Fecha venta</th>
-                  <th style="color: black">Numero factura</th>
-                  <th style="color: black">Accion</th>
+                  <th style="color: black">Nombre</th>
+                  <th style="color: black">Dui</th>
+                  <th style="color: black">Teléfono</th>
+                  <th style="color: black">Nit</th>
+                  <th style="color: black">Ingresos</th>
+                  <th style="color: black">Dirección</th>
+                  <th style="color: black" colspan="2"><div align="center">Acción</div></th>
+                 
                  
                 </tr>
               </thead>
               <tbody class="buscar">
-                @foreach($ventas as $ven) 
+                @foreach($cliente as $cli) 
                 <tr class="gradeX">
                 
-                  <td>{{ $ven->id}}</td>
-                  <td>{{ $ven->descripcion}}</td>
-                  <td>${{ $ven->montov}}</td>
-                  <td>{{ $ven->fechav}}</td>
-                  <td>{{ $ven->numfactura}}</td>
-                  <td>{!!Form::open(['route'=>['ventas.show',$ven->id],'method'=>'GET'])!!}
-                                            <input type="submit" name="" value="Detalle Venta"   class="btn btn-success " />
-                                         {!!Form::close()!!}</td>
+                  <td>{{ $cli->id}}</td>
+                  <td>{{ $cli->nomCliente}}</td>
+                  <td>{{ $cli->dui}}</td>
+                  <td>{{ $cli->telCliente}}</td>
+                  <td>{{ $cli->nit}}</td>
+                  <td>{{ $cli->ingreso}}</td>
+                  <td>{{ $cli->dirCliente}}</td>
+                  <td>
+                  {!!Form::open(['route'=>['creditos.show',$cli->id],'method'=>'GET'])!!}
+                     <input type="submit" name="" value="Creditos"   class="btn btn-info" >
+                  {!!Form::close()!!}   
+
+                  </td>
+
+                  <td>
+                  
+                  <a class="btn btn-success" href="/sicicza/public/creditosHistorial/{{ $cli->id }}">Historial</a>
+               
+                   
+                 </td>
+        
+                 
+
+             
+                 
+               {!!Form::close()!!}
+                </tr>
                 </tr>
                 @endforeach
 
@@ -80,13 +102,35 @@
     </div>
   </div>
 </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</section>
 <div class="text-right">
         <div class="credits">
             <!-- 
                 All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
+                You can delete the links only if you purchased the cli version.
                 Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+                Purchase the cli version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
             -->
             
             <a> <img src="/SICICZA/public/img/minerva2.png" style="width:30px;height:30px;" >  copyright</a> UES FMP <a >2017</a><img src="/SICICZA/public/img/minerva2.png" style="width:30px;height:30px;" > 

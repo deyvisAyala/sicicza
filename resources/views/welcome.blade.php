@@ -258,6 +258,7 @@ footer {
                       </a>
                       <ul class="sub">
                           <li><a class="" href="/sicicza/public/ventas/create">REGISTRAR VENTA</a></li>
+                          <li><a class="" href="/sicicza/public/ventas">VER VENTAS</a></li>
                            <li><a class="" href="/sicicza/public/Factura">VER FACTURAS</a></li>
                       </ul>
                   </li>

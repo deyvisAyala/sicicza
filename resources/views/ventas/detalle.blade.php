@@ -21,7 +21,7 @@
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a >Ver Ventas</a></li>
+            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create">Detalles de la venta</a></li>
           </ol>
         </div>
       </div>
@@ -45,26 +45,26 @@
               <thead style="background-color: SteelBlue">
                 <tr>
                   <th style="color: black">#</th>
-                  <th style="color: black">Descripcion</th>
-                  <th style="color: black">Monto</th>
-                  <th style="color: black">Fecha venta</th>
-                  <th style="color: black">Numero factura</th>
-                  <th style="color: black">Accion</th>
+                  <th style="color: black">Nombre Producto</th>
+                  <th style="color: black">Nombre Proveedor</th>
+                  
+                  <th style="color: black">Précio Venta</th>
+                  <th style="color: black">Cantidad Vendida </th>
+                 
                  
                 </tr>
               </thead>
               <tbody class="buscar">
-                @foreach($ventas as $ven) 
+                @foreach($venta as $com) 
                 <tr class="gradeX">
                 
-                  <td>{{ $ven->id}}</td>
-                  <td>{{ $ven->descripcion}}</td>
-                  <td>${{ $ven->montov}}</td>
-                  <td>{{ $ven->fechav}}</td>
-                  <td>{{ $ven->numfactura}}</td>
-                  <td>{!!Form::open(['route'=>['ventas.show',$ven->id],'method'=>'GET'])!!}
-                                            <input type="submit" name="" value="Detalle Venta"   class="btn btn-success " />
-                                         {!!Form::close()!!}</td>
+                  <td>{{ $com->id}}</td>
+                  <td>{{ $com->nomProducto}}</td>
+                  <td>{{ $com->nomProveedor}}</td>
+                  <td>${{ $com->preVenta}}</td>
+                  <td>{{ $com->cantidad}}</td>
+                  
+                
                 </tr>
                 @endforeach
 
