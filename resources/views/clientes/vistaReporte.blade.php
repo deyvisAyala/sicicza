@@ -45,56 +45,6 @@
                       </section>
                   </div>
               </div>
-               <!-- *****************************    segundo    formulario    **************************-->
-              
-
-              <div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel" style="background-color: #d9e6f2  ">
-                          <header class="panel-heading">
-                             Reporte de Cliente con Referencia
-                          </header>
-
-                          <div class="panel-body">
-                              <div class="form">
-                                  
-                                 {!! Form::open(['url'=>['reporteCliente2'],'method'=>'POST','target'=>'_blank']) !!}
-                           <div class="box-header">                            
-                          </div><!-- /.box-header -->
-                          <div class="box-body pad">
-                              <div class="form-group ">
-                         <div class=" col-lg-1" ><td><b>Seleccione cliente:</b></div>
-                            <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
-                                         
-                             <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
-                           
-                                       <select class="form-control" name="idMarca">
-                               
-                                        @foreach($cliente as $mar)
-                                <option  value="{{ $mar->id }}" >{{ $mar->nomCliente }}</option>
-                                 
-                            @endforeach
-                                                       
-                            </select>
-                                          
-                                      </div>
-                            </div>                           
-                            <br>  
-                                      
-                                        
-                                      <br><br><br>
-                              {!! Form::submit('Generar Informe de Clientes',['class'=>'btn btn-info']) !!}  </form>
-                              </div>
-
-
-                          </div>
-
-                      </section>
-                  </div>
-              </div>
-
-               
-              <!-- page end-->
               
           </section>
 

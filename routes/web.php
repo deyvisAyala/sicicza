@@ -68,11 +68,15 @@ Route::match(['get','post'],'pagarCredito/{id}','creditosController@pagarCredito
 
 
 
-//tony
+
 Route::match(['get','post'],'reporteVenta','ventasController@vistaVentasReporte');
 Route::match(['get','post'],'reporteVenta2','ventasController@reporteVentas');
 Route::match(['get','post'],'reporteInventario','ProductoController@vistaVentasReporte');
 Route::match(['get','post'],'reporteInventario2','ProductoController@reporteInven');
+
+
+//tony
+Route::match(['get','post'],'reporteCredito','ProductoController@reporteInven');
 
 });
 

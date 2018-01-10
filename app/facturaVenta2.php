@@ -23,4 +23,6 @@ class facturaVenta2 extends Model
             ->get();
    }
 
+
+   
 }

@@ -34,6 +34,17 @@ class pago extends Model
             ->get();
  
    }
- 
+
+   public static function sacarCreditos(){      
+    return DB::table('pagos')
+      
+       ->join('clientes', 'clientes.id', '=', 'factura_venta2s','factura_venta2s.idcliente')
+          ->where('pagos.pendiente','=',$finicial )
+       ->where('factura_venta2s.fechav','<=',$ffinal )
+            
+            ->select('factura_venta2s.*','clientes.nomCliente')
+            ->orderBy('factura_venta2s.id')
+            ->get();
+   }
  
 }
