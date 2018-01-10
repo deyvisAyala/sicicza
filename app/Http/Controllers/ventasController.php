@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Response;
 use App\ventasp;
-
+use App\Http\Requests\facturaVentaRequest;
 class ventasController extends Controller
 {
      public function create() {
@@ -27,7 +27,7 @@ class ventasController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(facturaVentaRequest $request)
     {
         //
                 //$v="+"+1+" month";
@@ -162,7 +162,7 @@ class ventasController extends Controller
         $cliente=\App\cliente::where('dui',$id)->get();
         
         $cliente[0]->ingreso=($cliente[0]->ingreso-200);
-        $pago = \App\pago::pagosXCliente($id);
+        $pago = \App\pago::pagosXCliente($cliente[0]->id);
         foreach ($pago as $value) {
            $cliente[0]->ingreso=$cliente[0]->ingreso-$value->monto;
         }

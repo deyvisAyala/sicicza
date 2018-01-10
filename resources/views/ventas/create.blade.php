@@ -5,6 +5,7 @@
           <section class="wrapper">
       <div class="row" style="background-color: #b3cccc">
         <div class="col-lg-12">
+          @include('alertas.request')
         @if($message=='stock')
         <div class="alert alert-danger alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
