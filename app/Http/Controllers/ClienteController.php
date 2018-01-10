@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\cliente;
 use App\referencia;
+use App\Http\Requests\clienteRequest;
+
 
 class ClienteController extends Controller
 {
@@ -15,13 +17,13 @@ class ClienteController extends Controller
     }
    
     //y el estore es para guardar los del create
-    public function store(request $request) { 
+    public function store(clienteRequest $request) { 
         //
      cliente::create([
             //modelo                //la vista create
             'nomCliente' => $request['nombre'],
             'dui' => $request['dui'],
-            'telCliente' => $request['telefono'],
+            'telCliente' => $request['telCliente'],
             'nit' => $request['nit'], 
             'ingreso' => $request['email'],
             'dirCliente' => $request['direccion'],
@@ -39,7 +41,7 @@ class ClienteController extends Controller
         return view('clientes.index',compact('cliente','referencia'));      
     }
 
-      public function update(Request $request, $id)  //los recues llevan toda la info de form
+      public function update(clienteRequest $request, $id)  //los recues llevan toda la info de form
     {
         $cli =\App\cliente::find($id);
         $aux=$request['opcModificar'];
@@ -73,7 +75,7 @@ class ClienteController extends Controller
         
 
 
-    return redirect('/cliente');
+    return redirect('/cliente')-> with('message','update');
     }
 
      public function show($id)

@@ -183,7 +183,7 @@ class ventasController extends Controller
 
 //////////////////////ESPACIO PARA LLAMADO Y CONSULTA DE REPORTES/////////////////////////////////
 
-            public function vistaVentasReporte() {
+        public function vistaVentasReporte() {
         //$aux11= \App\listaDeCompra::All();
        
         //return view('compras.create',compact('proveedor','aux11'));   
@@ -211,6 +211,23 @@ class ventasController extends Controller
      return $pdf->stream('Reporte Ventas '.$date.'.pdf');
     }
 
+    public function reporteCredito(request $request)
+    {
+        
+        $creditos= \App\pagos::sacarCreditos();
+       
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.creditos";
+      $view =  \View::make($vistaurl, compact('creditos', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Ventas '.$date.'.pdf');
+    }
+
 
 
     /* public function reporte2(request $request)
@@ -230,6 +247,5 @@ class ventasController extends Controller
       
      return $pdf->stream('Reporte Compras '.$date.'.pdf');
     } */             
-
     
 }

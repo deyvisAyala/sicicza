@@ -1,10 +1,14 @@
 @extends('welcome')
 @section('contenido')
 
+
 <section id="main-content">
   <section class="wrapper">
       <div class="row" style="background-color: #b3cccc" >
         <div class="col-lg-12" >
+           @include('alertas.request')
+       
+       
           <h3 class="page-header" ><i class="fa fa-shopping-cart "></i> Registro De Cliente</h3>
           <ol class="breadcrumb" style="background-color: ">
             <li><i class="fa fa-home"></i><a href="/sicicza/public/proveedor/create">inicio</a></li>
@@ -56,7 +60,7 @@
                                          
                                         <span class="input-group-addon"><i class="fa fa-phone " style="color:MediumSeaGreen "></i></span>
                            
-                                         <input id="telefono" name="telefono" type="text" placeholder="Ej. 7777-7777" class="form-control phone" required >
+                                         <input id="telefono" name="telCliente" type="text" placeholder="Ej. 7777-7777" class="form-control phone" required >
                                           
                                       </div>
 

@@ -6,9 +6,10 @@
       <div class="row" style="background-color: #b3cccc" >
         <div class="col-lg-12">
         @if($message=='update')
-          <div class="alert alert-info alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<strong> •Sea actualizado con éxito el registro</strong>
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong> •Sea Editado con éxito el registro</strong>
+
 </div>
 @endif
 @if($message=='create')
@@ -16,7 +17,7 @@
                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong> •Sea creado con éxito el registro</strong>
         </div>
-        @endif
+         @endif
           <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
