@@ -21,7 +21,7 @@
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create">Regitrar compras</a></li>
+            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create"> compras  </a></li>
           </ol>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5><b>Tabla de datos<b></h5>
+            <h2><b>Productos comprados al Proveedor: {{  $compra[0]->nomProveedor}}<b></h2>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>
@@ -46,30 +46,42 @@
                 <tr>
                   <th style="color: black">#</th>
                   <th style="color: black">Nombre Producto</th>
-                  <th style="color: black">Nombre Proveedor</th>
                   
+                   <th style="color: black">Cantidad comprada </th>
                   <th style="color: black">Précio compra</th>
-                  <th style="color: black">Cantidad comprada </th>
                  
+                  <th style="color: black">Total</th>
                  
                 </tr>
               </thead>
               <tbody class="buscar">
+                  <?php
+                      $totalF=0;
+                  ?>
                 @foreach($compra as $com) 
                 <tr class="gradeX">
                 
                   <td>{{ $com->id}}</td>
                   <td>{{ $com->nomProducto}}</td>
-                  <td>{{ $com->nomProveedor}}</td>
+                     <td>{{ $com->cancompra}}</td>
                   <td>${{ $com->preciocomp}}</td>
-                  <td>{{ $com->cancompra}}</td>
-                  
+               
+                  <?php
+                      $total=$com->preciocomp*$com->cancompra;
+                      $totalF=$totalF+$total;
+                  ?>
+                  <td>$ <?php echo $total;?></td>
                 
                 </tr>
                 @endforeach
-
                 
               </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" align="center">Total</td>
+                  <td >$<?php echo $totalF;?></td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>

@@ -88,7 +88,7 @@
                                       </div>
 
 
-                                       <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Precion unitario:</b></div>
+                                       <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Precio unitario:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
 
                                 <span class="input-group-addon"><i class="fa fa-money " style="color:MediumSeaGreen "></i></span>
@@ -219,48 +219,30 @@
                                                  <i class="fa fa-bookmark fa-3x" style="color:MediumSeaGreen   "></i>
                                             </span>
                                             <h1>Venta Total</h1> 
-                                                <br><br>
+                                            
                                             
                                             
 
                                               <div class="form-group">
                                             
-                                                     <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Fecha:</b></div>
-                                                     <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
-                                                    <span class="input-group-addon "><i class="fa fa-calendar" style="color:MediumSeaGreen "></i></span>
-                                                
-                                                    <input id="fecha" name="fecha" type="date" placeholder="fecha" class="form-control" required >
-
                                                     
-                                                </div>
-                                           
-                                                      <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Monto:</b></div>
+                                                      <div class=" col-md-1 col-md-offset-1 col-lg-1" ><b>Monto:</b></div>
                                                      <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                                          
 
                                                         
                                                     <span class="input-group-addon"><i class="fa fa-money " style="color:MediumSeaGreen "></i></span>
-                                                    <input id="monto" name="monto" type="text" value=<?php  echo $suma;?> class="form-control" required >
+                                                    <input id="monto" name="monto" type="number" value=<?php  echo $suma;?> class="form-control" required >
                                                     
                                                 </div>
                                             </div>
 <br><br><br>
-                                            <div class="form-group">
-                                            <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Descripción:</b></div>
-                                                     <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
-                                                    <span class="input-group-addon"><i class="fa fa-pencil-square-o " style="color:MediumSeaGreen "></i></span>
-                                                    <textarea name="des" id="des" rows="3" cols="40">
-                                                    </textarea>
-                                            </div>
-                                                
-                                                
-
-                                      </div>
+                                          
                                       <br>
                                       <div class="form-group col-md-0">
                                           <div class="col-md-12 text-center" align="">
-                                               <a href="#"   class="btn btn-primary" align=" center" data-id="1" data-toggle="modal" data-target ="#Edit">Credito</a></td>
-                                               <button class="btn btn-danger" type="submit">contado</button>
+                                               <a href="#"   class="btn btn-primary" align=" center" data-id="1" data-toggle="modal" data-target ="#Edit">Vender</a></td>
+                                             
                                       
                                           </div>
                                            
@@ -346,7 +328,7 @@
                                        <br>  <br> 
                                        <div class="col-md-2 col-lg-2 col-md-offset-1""> <td><b>Prima:</b></div>
                                             <div class="col-md-3 col-lg-5" >
-                                            <input type="text" class="textbox" id="prima" name="prima" placeholder="" value="0" required="" >
+                                            <input type="number" class="textbox" id="prima" name="prima" placeholder="" value="0" min="0" required="" >
                                        </div>
 
 

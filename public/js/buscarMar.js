@@ -81,6 +81,13 @@ $('#prima').on('change',function(e)
 	var precioventa=$("#monto").val();
 	var w=$("#prima").val();
 	$("#total").val(precioventa);
+      
+          if(parseFloat(w)>parseFloat(precioventa)){
+        $("#prima").val(precioventa);
+    }
+      if(parseFloat(w)<0){
+        $("#prima").val(0);
+    }
 	if(w.length==0 )
     {
     	$("#prima").val(0);
@@ -137,6 +144,21 @@ $('#formap').on('change',function(e)
             }
 		
 
+
+
+});
+
+$('#telefono').on('change',function(e)
+{
+    //var producto=$('#cargar');
+    
+    
+    
+    //producto.empty();
+    var cant=$("#telefono").val();
+    var pre=$("#preUnitario").val();
+    var total=cant*pre;
+    $("#nit").val(total.toFixed(2));
 
 
 });

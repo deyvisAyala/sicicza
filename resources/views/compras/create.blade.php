@@ -220,8 +220,7 @@ $sum=0;
                                             <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Descripción:</b></div>
                                                      <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                                     <span class="input-group-addon"><i class="fa fa-pencil-square-o " style="color:MediumSeaGreen "></i></span>
-                                                    <textarea name="des" id="des" rows="4" cols="30">
-                                                    </textarea>
+                                                    <textarea name="des" id="des" rows="4" cols="30"></textarea>
                                             </div>
                                                 
                                                 
