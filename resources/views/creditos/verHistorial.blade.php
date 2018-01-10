@@ -18,11 +18,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
+          <h3 class="page-header"><i class="fa fa-user "></i>  ver Historial </h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create"> Creditos Pendientes : </a></li>
+            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create"> Historial : </a></li>
           </ol>
         </div>
       </div>
@@ -47,10 +47,12 @@
               <thead style="background-color: SteelBlue">
                 <tr>
                   <th style="color: black">#Credito</th>
-                  <th style="color: black">proxima Fecha de pago</th>
+                  <th style="color: black">Fecha de pago</th>
+                  <th style="color: black">Tipo de Venta</th>
+
                   <th style="color: black">#cuotas</th>
                   <th style="color: black">Monto por cuota</th>
-                   <th style="color: black">Pendiente</th>
+                  
                     <th style="color: black">total</th>
                   <th style="color: black"><div align="center">Acción</div></th>
                  
@@ -66,33 +68,35 @@
                                 <th scope="row" ><?php echo $con;?></th>
                                 <?php $con++;?>
                                  <td>{{ $pro->fecPago }}</td>
+                                 @if($pro->cuotas==0)
+                                 <td>Contado</td>
+                                 @else
+                                 <td>Credito</td>
+                                 @endif
                                  <td>{{ $pro->cuotas }}</td>
                                  <?php $total=$total+$pro->monto; ?>
                                  <td> $ {{ $pro->monto}}</td>
-                                 <td> $ {{ $pro->pendiente}}</td>
+                                 
                                  @if($pro->cuotas==0)
 
                                  <td> $ {{ $pro->montov}}</td>
+                                 <td>Sin detalle</td>
                                   @else
                                   <?php $total2=($pro->monto*$pro->cuotas); ?>
                                   <td>$ <?php echo $total2;?></td>
-                                  @endif
-                                 <td>
-                                    {!!Form::open(['route'=>['creditos.show',$pro->id],'method'=>'GET'])!!}
-                                        <input type="submit" name="" value="Pagar"   class="btn btn-info btn-sm active " >
+                                  <td>
+                                    {!!Form::open(['route'=>['creditos.edit',$pro->id],'method'=>'GET'])!!}
+                                        <input type="submit" name="" value="Detalle"   class="btn btn-info " >
                                     {!!Form::close()!!}   
-                                 </td>                    
+                                 </td> 
+                                  @endif
+
+                                                    
                             </tr>
                        
                  @endforeach
                 </tbody>
-                <tfoot>                                 
-                 <tr align="center">                             
-                    <td colspan="3"><p style="font-weight: bold;">Total Mensual</p></td>
-                    <td colspan="1" ><p style="font-weight: bold;"><?php echo round($total,2);?></p></td>
-                    <td colspan="1" ></td>
-                 </tr>
-                </tfoot>
+                
             </table>
           </div>
         </div>

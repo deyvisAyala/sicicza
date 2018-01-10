@@ -33,7 +33,7 @@
                                                      
                                       <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                          
-                                        <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                                        <span class="input-group-addon"><i class="fa fa-user " style="color:MediumSeaGreen "></i></span>
                            
                                          <input id="nombre" name="nombre" type="text" placeholder="Ingrese nombre del cliente" class="form-control " required >
                                           
@@ -43,9 +43,9 @@
                                        <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Dui:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
 
-                                <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                                <span class="input-group-addon"><i class="fa fa-indent" style="color:MediumSeaGreen "></i></span>
                                 
-                                 <input id="dui" name="dui" type="text" placeholder="Dui. Ej:77777777-7" class="form-control " required >
+                                 <input id="dui" name="dui" type="text" placeholder="Dui. Ej:77777777-7" class="form-control dui" required >
                              </div>
                             </div>
 
@@ -54,9 +54,9 @@
                                                      
                                       <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                          
-                                        <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                                        <span class="input-group-addon"><i class="fa fa-phone " style="color:MediumSeaGreen "></i></span>
                            
-                                         <input id="telefono" name="telefono" type="text" placeholder="Ej. 7777-7777" class="form-control " required >
+                                         <input id="telefono" name="telefono" type="text" placeholder="Ej. 7777-7777" class="form-control phone" required >
                                           
                                       </div>
 
@@ -64,9 +64,9 @@
                                        <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Nit:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
 
-                                <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                                <span class="input-group-addon"><i class="fa fa-indent " style="color:MediumSeaGreen "></i></span>
                                 
-                                 <input id="nit" name="nit" type="text" placeholder="Ej. 7777-777777-777-7" class="form-control " required >
+                                 <input id="nit" name="nit" type="text" placeholder="Ej. 7777-777777-777-7" class="form-control nit" required >
                              </div>
                             </div>
 
@@ -75,7 +75,7 @@
                                                      
                                       <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                          
-                                        <span class="input-group-addon"><i class="fa fa-envelope " style="color:MediumSeaGreen "></i></span>
+                                        <span class="input-group-addon"><i class="fa fa-dollar " style="color:MediumSeaGreen "></i></span>
                            
                                          <input type="number" min="0" id="cemail" name="email" class="form-control" placeholder="ingresos"  required>
                                           
@@ -85,7 +85,7 @@
                                        <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Direccion:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
 
-                                <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                                <span class="input-group-addon"><i class="fa fa-pencil-square-o " style="color:MediumSeaGreen "></i></span>
                                 
                                  <input id="direccion" name="direccion" type="text" placeholder="Digite la direccion del cliente" class="form-control " required >
                              </div>

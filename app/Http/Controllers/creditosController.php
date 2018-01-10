@@ -52,7 +52,7 @@ class creditosController extends Controller
     {
        
          $pago = \App\pago::pagosXCliente2($id,false);
-        return view('creditos.verCreditos',compact('pago'));
+        return view('creditos.verHistorial',compact('pago'));
     }
     public function pagarCredito($id)
     {
@@ -71,7 +71,9 @@ class creditosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pago=\App\pago::find($id);
+        $cuotas=\App\cuota::where('idpago',$id)->get();
+        return view('creditos.verDetalle',compact('cuotas','pago'));
     }
 
     /**
@@ -101,6 +103,7 @@ class creditosController extends Controller
         {
             $cuota->estado=false;
             $cuota->pendiente=0;
+            $cuota->fecPago=$request['fecha'];
             $cuota->save();
             //$cli =\App\cliente::find($cuota->);
             

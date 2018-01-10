@@ -39,11 +39,11 @@ class pago extends Model
     return DB::table('pagos')
       
        ->join('clientes', 'clientes.id', '=', 'factura_venta2s','factura_venta2s.idcliente')
-          ->where('pagos.pendiente','=',$finicial )
-       ->where('factura_venta2s.fechav','<=',$ffinal )
+          ->where('pagos.pendiente','>','1' )
+       
             
-            ->select('factura_venta2s.*','clientes.nomCliente')
-            ->orderBy('factura_venta2s.id')
+            ->select('pagos.*','clientes.nomCliente')
+            ->orderBy('pagos.id')
             ->get();
    }
  
