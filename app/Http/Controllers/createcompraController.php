@@ -9,6 +9,7 @@ use App\facturaCompra;
 use App\detallesCompra;
 use App\listaDeCompra;
 use App\marca;
+use App\Http\Requests\facturaCompraRequest;
 class createCompraController extends Controller
 {
     
@@ -27,14 +28,14 @@ class createCompraController extends Controller
     }
 
     //y el estore es para guardar los del create
-    public function store(request $request) { 
+    public function store(facturaCompraRequest $request) { 
     	//
     facturaCompra::create([
      		//modelo     			//la vista create
             'tipopago' => $request['des'],  
             'montocompra' => $request['monto'],
             'fechacompra' => $request['fecha'], 
-            'nfactura' => $request['numfac'], 
+            'nfactura' => $request['nfactura'], 
                      
         ]);
     

@@ -3,8 +3,10 @@
 $sum=0;
  <section id="main-content">
           <section class="wrapper">
+
       <div class="row" style="background-color: #b3cccc" >
         <div class="col-lg-12" >
+          @include('alertas.request')
           <h3 class="page-header" ><i class="fa fa-shopping-cart "></i> Registro De Compra</h3>
           <ol class="breadcrumb" style="background-color: ">
             <li><i class="fa fa-home"></i><a href="/sicicza/public/proveedor/create">inicio</a></li>
@@ -194,7 +196,7 @@ $sum=0;
                                              <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b> factura:</b></div>
                                                      <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                                     <span class="input-group-addon" style="color:MediumSeaGreen ">#<i class= style="color:MediumSeaGreen "></i></span>
-                                                    <input id="numFac" name="numfac" type="text" placeholder="Nunmero de factura" class="form-control" required >
+                                                    <input id="numFac" name="nfactura" type="text" placeholder="Nunmero de factura" class="form-control" required >
                                                 </div>
                                             
                                                     
