@@ -220,6 +220,7 @@ footer {
                                                   
                           <li><a class="" href="/sicicza/public/producto/create">REGISTRO </a></li>
                           <li><a class="" href="/sicicza/public/producto">VER PRODUCTOS</a></li>
+                          <li><a class="" href="/sicicza/public/kardex">VER KARDEX</a></li>
                           <li><a class="" href="/sicicza/public/reporteInventario">VER REPORTES</a></li>
                          
                       </ul>

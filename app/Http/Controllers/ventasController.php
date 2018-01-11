@@ -101,7 +101,10 @@ class ventasController extends Controller
             ]);
                     $c=$request['idcliente'];
                     $cli=\App\cliente::find($c);
+
                     
+       
+                  
                      return redirect('ventas/create')->with('message','stock');
                     
             }
@@ -120,6 +123,17 @@ class ventasController extends Controller
             ]);
 
             }
+
+              $date = date('d-m-Y');
+                    $date1 = date('g:i:s a');
+                    
+
+                  $vistaurl="reportes.factura";
+                  $view =  \View::make($vistaurl, compact('date','date1'))->render();
+                  $pdf = \App::make('dompdf.wrapper');
+                  $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Ventas '.$date.'.pdf');
 
         return redirect('ventas/create')->with('message','create');
     }

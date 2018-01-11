@@ -23,4 +23,15 @@ class detalleVenta extends Model
  
    }
 
+   public static function sacarVentasPorProductos($id){
+       return DB::table('detalle_ventas')
+           
+          
+            ->where('detalle_ventas.idProducto', '=', $id)
+            ->select('detalle_ventas.*')
+            ->orderBy('detalle_ventas.id')
+            ->get();
+ 
+   }
+
 }

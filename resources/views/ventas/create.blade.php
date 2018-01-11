@@ -329,7 +329,7 @@
                                        <br>  <br> 
                                        <div class="col-md-2 col-lg-2 col-md-offset-1""> <td><b>Prima:</b></div>
                                             <div class="col-md-3 col-lg-5" >
-                                            <input type="number" class="textbox" id="prima" name="prima" placeholder="" value="0" min="0" required="" >
+                                            <input type="" class="textbox" id="prima" name="prima" placeholder="$000.00" value=""  required="" >
                                        </div>
 
 

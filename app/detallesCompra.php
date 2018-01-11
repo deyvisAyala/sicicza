@@ -28,4 +28,16 @@ class detallesCompra extends Model
             ->get();
  
    }
+
+
+   public static function sacarComprasPorProductos($id){
+       return DB::table('detalles_compras')
+           
+          
+            ->where('detalles_compras.idprods', '=', $id)
+            ->select('detalles_compras.*')
+            ->orderBy('detalles_compras.id')
+            ->get();
+ 
+   }
 }

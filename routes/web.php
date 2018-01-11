@@ -75,13 +75,13 @@ Route::match(['get','post'],'reporteInventario','ProductoController@vistaVentasR
 Route::match(['get','post'],'reporteInventario2','ProductoController@reporteInven');
 
 
-//tony
 Route::match(['get','post'],'reporteCredito','ProductoController@reporteCredito');
 
 
 Route::match(['get','post'],'stock','ProductoController@stock');
 });
-
+//tony
+Route::match(['get','post'],'kardex','ProductoController@listaProductos');
 
 
 //te importa todas las rutas de los controladores

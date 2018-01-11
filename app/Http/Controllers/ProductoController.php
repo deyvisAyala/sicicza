@@ -39,13 +39,13 @@ public function index() {
     }
      
 
- public function show($id)
+ /*public function show($id)
     {
         //
         $pro2 =\App\producto::mostrar($id);
         return view('producto.index',compact('pro2'));
        
-    }
+    }*/
      public function stock()
     {
         //
@@ -91,7 +91,27 @@ public function index() {
     return redirect('/producto');
     }
 
+    public function listaProductos() {  
+        $producto =\App\producto::proPro();
+        //$pro =\App\producto::proPro();
+        $proveedor =\App\proveedor::All();
+        $marca =\App\marca::All();
+        return view('productos.kardex',compact('producto','pro2','marca'),compact('proveedor'));       
+    }
 
+    public function show($id)
+    {
+        //
+         $producto = productos::find($id);
+        
+
+         $comp=\App\detalles_compras::sacarComprasPorProductos($id);
+         $comp2=\App\detalle_ventas::sacarVentasPorProductos($id);
+         
+
+        // $com=\App\compras::pro2($comp->id);
+        return view('inventario.kardex',compact('lotes','pro','comp','comp2')); 
+    }
 
     //////////////////////ESPACIO PARA LLAMADO Y CONSULTA DE REPORTES/////////////////////////////////
 
