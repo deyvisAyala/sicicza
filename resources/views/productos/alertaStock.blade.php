@@ -9,18 +9,25 @@
       <div class="row" style="background-color: #b3cccc">
         <div class="col-lg-12">
         
-          <h3 class="page-header"><i class="fa fa-truck "></i> Comprar</h3>
+          <h3 class="page-header"><i class="fa fa-truck "></i> Notificaciones</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-truck"></i>compras</li>
-            <li><i class="fa fa-pencil-square-o"></i>registro de compras</li>
+            <li><i class="fa fa-truck"></i>Notificaciones</li>
+            <li><i class="fa fa-pencil-square-o"></i>Ver  Notificaciones</li>
           </ol>
         </div>
       </div>
 
                         
     <div class="row">
-  
+  <div class="form-group" align="right">
+                          <p>
+                            <img src="/sicicza/public/img/rojo.png" class="" alt="User Image" width="25px" height="25px"> Peligro &nbsp &nbsp &nbsp
+                            
+                            <img src="/sicicza/public/img/amarillo.jpg" class="" alt="User Image" width="30px" height="30px"> Advertencia  &nbsp &nbsp &nbsp
+                            
+                          </p>
+                        </div>
 
                             @foreach ($productos as $v)
                              
@@ -40,6 +47,7 @@
               </div>
               <div class="widget-content" align="center" style="background-color: white;">
               <br>
+
                 {{"Marca: ".$v->nomMarca}}
                                      <br>
                                      {{"Existencias: ".$v->existencia}}
