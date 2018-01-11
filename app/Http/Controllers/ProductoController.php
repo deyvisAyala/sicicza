@@ -46,6 +46,13 @@ public function index() {
         return view('producto.index',compact('pro2'));
        
     }
+     public function stock()
+    {
+        //
+        $productos =\App\producto::proPro();
+        return view('productos.alertaStock',compact('productos'));
+       
+    }
 
      public function update(Request $request, $id)
     {

@@ -78,6 +78,8 @@ Route::match(['get','post'],'reporteInventario2','ProductoController@reporteInve
 //tony
 Route::match(['get','post'],'reporteCredito','ProductoController@reporteCredito');
 
+
+Route::match(['get','post'],'stock','ProductoController@stock');
 });
 
 
