@@ -13,7 +13,7 @@ class tempoventa extends Model
    		 return DB::table('tempoventas')
             ->join('productos', 'productos.id', '=', 'tempoventas.idProducto')
             
-            ->select('tempoventas.*','productos.nomProducto')
+            ->select('productos.*','tempoventas.*')
             ->orderBy('tempoventas.id')
             ->get();
     //

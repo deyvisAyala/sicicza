@@ -11,7 +11,7 @@
           <h3 class="page-header"><i class="fa fa-truck "></i> Reporte Compra</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-eye"></i><a href="/sicicza/public/proveedor">Reportes</a></li>
+            <li><i class="fa fa-eye"></i>Reportes</li>
             
           </ol>
         </div>
@@ -54,54 +54,7 @@
                       </section>
                   </div>
               </div>
-               <!-- *****************************    segundo    formulario    **************************-->
               
-
-               <div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel" style="background-color: #d9e6f2  ">
-                          <header class="panel-heading">
-                              Filtro del reporte por proveedor
-                          </header>
-
-                          <div class="panel-body">
-                              <div class="form">
-                                  
-                                 {!! Form::open(['url'=>['reporteCompra3'],'method'=>'POST','target'=>'_blank']) !!}
-                                     
-                                     <div class="box-header">                            
-                          </div><!-- /.box-header -->
-                          <div class="box-body pad">
-                              <div class="form-group ">
-                         <div class=" col-lg-1" ><td><b>Seleccione proveedor:</b></div>
-                            <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
-                                         
-                             <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
-                           
-                                       <select class="form-control" name="idMarca">
-                               
-                                        @foreach($Vproveedor as $mar)
-                                <option  value="{{ $mar->id }}" >{{ $mar->nomProveedor }}</option>
-                                 
-                            @endforeach
-                                                       
-                            </select>
-                                          
-                                      </div>
-                            </div>                           
-                            <br>  
-                                      
-                                        
-                                      <br><br><br>
-                              {!! Form::submit('Generar Informe',['class'=>'btn btn-info']) !!}  </form>
-                              </div>
-
-
-                          </div>
-
-                      </section>
-                  </div>
-              </div>
               <!-- page end-->
               
           </section>

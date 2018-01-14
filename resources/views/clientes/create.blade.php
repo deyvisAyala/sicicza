@@ -9,10 +9,10 @@
            @include('alertas.request')
        
        
-          <h3 class="page-header" ><i class="fa fa-shopping-cart "></i> Registro De Cliente</h3>
+          <h3 class="page-header" ><i class="fa fa-user"></i>Registrar Clientes</h3>
           <ol class="breadcrumb" style="background-color: ">
             <li><i class="fa fa-home"></i><a href="/sicicza/public/proveedor/create">inicio</a></li>
-            <li><i class="fa fa-shopping-cart"></i>Clientes</li>
+            <li><i class="fa fa-user"></i>Clientes</li>
             <li><i class="fa fa-pencil-square-o"></i>Registrar cliente</li>
           </ol>
         </div>
@@ -75,13 +75,13 @@
                             </div>
 
                                <div class="form-group ">
-                                    <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>ingreso mensual:</b></div>
+                                    <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Ingreso mensual:</b></div>
                                                      
                                       <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                          
                                         <span class="input-group-addon"><i class="fa fa-dollar " style="color:MediumSeaGreen "></i></span>
                            
-                                         <input type="number" min="0" id="cemail" name="email" class="form-control" placeholder="ingresos"  required>
+                                         <input type="text" min="0" id="cemail" name="email" class="form-control ingreso" placeholder="ingresos"  required>
                                           
                                       </div>
 

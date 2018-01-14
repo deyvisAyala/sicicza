@@ -103,7 +103,7 @@ footer {
 
                             <i class="icon-bell-l"></i>
                             
-                            <span class="badge bg-important">7</span>
+                            <span class="badge bg-important">+</span>
                         </a>
                         <ul class="dropdown-menu extended notification">
                             <div class="notify-arrow notify-arrow-blue"></div>
@@ -112,22 +112,13 @@ footer {
                             </li>
                             
                             <li>
-                                <a href="#">
+                                <a href="/sicicza/public/stock">
                                     <span class="label label-danger"><i class="icon_book_alt"></i></span> 
-                                    Project 3 Completed.
-                                    <span class="small italic pull-right">1 hr</span>
-                                </a>
+                                   
+                                   
+                                Notificaciones</a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-success"><i class="icon_like"></i></span> 
-                                    Mick appreciated your work.
-                                    <span class="small italic pull-right"> Today</span>
-                                </a>
-                            </li>                            
-                            <li>
-                                <a href="#">See all notifications</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <!-- alert notification end-->
@@ -152,7 +143,7 @@ footer {
                                  <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="icon_key_alt"></i> 
-                                            Salir
+                                            Cerrar sesiòn
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -193,7 +184,7 @@ footer {
                       <ul class="sub">
                           <li><a class="" href="/sicicza/public/marca/create">REGISTRAR</a></li>                          
                           <li><a class="" href="/sicicza/public/marca">VER MARCAS</a></li>
-                          <li><a class="" href="/sicicza/public/reporteProvee" target="_blank" >REPORTE MARCAS</a></li>
+                          
                       </ul>
                   </li>
 
@@ -227,7 +218,7 @@ footer {
                   </li>       
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
-                          <i i class="fa fa-reddit" aria-hidden="true"></i>
+                          <i i class="fa fa-user" aria-hidden="true"></i>
                           <span>CLIENTES</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
@@ -235,7 +226,7 @@ footer {
                           <li><a class="" href="/sicicza/public/cliente/create">REGISTRAR</a></li>
                           <li><a class="" href="/sicicza/public/cliente">VER CLIENTES</a></li>
                           <li><a class="" href="/sicicza/public/creditos">VER CREDITOS</a></li>
-                          <li><a class="" href="/sicicza/public/reporteClienteA">REPORTE CLIENTES</a></li>
+                          <li><a class="" href="/sicicza/public/reporteCliente" target="_blank">REPORTE CLIENTES</a></li>
                       </ul>
                   </li>
                      
@@ -265,8 +256,12 @@ footer {
                            <li><a class="" href="/sicicza/public/reporteVenta">REPORTES</a></li>
                       </ul>
                   </li>
-                             
-                  <li class="sub-menu">
+                  
+                  
+              
+             
+                  
+                       <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-key"></i>
                           <span>SEGURIDAD</span>
@@ -277,6 +272,13 @@ footer {
                            <li><a class="" href="/sicicza/public/creditos/create">BITACORA</a></li>
                       </ul>
                   </li>
+                  
+                
+                
+                 
+                  
+                 
+                  
                   
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
@@ -429,11 +431,14 @@ footer {
 {!!Html::script('js/buscarMar.js')!!}
 
 
+
 <script type="text/javascript">
   $(document).ready(function(){
   $('.date').mask('00/00/0000');
   $('.gUni').mask('00.00');
   $('.stock').mask('00');
+  $('.ingreso').mask('00000');
+
   $('.correo').mask('"^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" ');
   $('.time').mask('00:00:00');
   $('.date_time').mask('00/00/0000 00:00:00');

@@ -144,23 +144,37 @@ public function index() {
 
 
 
-    /* public function reporte2(request $request)
+   public function listaExsistencias(request $request)
     {
-        $idPro = $request['idMarca'];
-       
-        $ventas= \App\facturaCompra::sacarComprasXproveedor($idPro);
-       
+        $productos= \App\producto::sacarProductosEnExisencia();
+    
         $date = date('d-m-Y');
         $date1 = date('g:i:s a');
         
 
-      $vistaurl="reportes.reporteXfecha";
-      $view =  \View::make($vistaurl, compact('ventas', 'date','date1'))->render();
+      $vistaurl="reportes.reporteINventarioExsistencia";
+      $view =  \View::make($vistaurl, compact('productos', 'date','date1'))->render();
       $pdf = \App::make('dompdf.wrapper');
       $pdf->loadHTML($view);
       
-     return $pdf->stream('Reporte Compras '.$date.'.pdf');
-    } */             
+     return $pdf->stream('Reporte Inventario Existencias '.$date.'.pdf');
+    }              
+
+    public function listaNoExsistencias(request $request)
+    {
+        $productos= \App\producto::sacarProductosNoEnExisencia();
+    
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        
+
+      $vistaurl="reportes.reporteINventarioExsistencia";
+      $view =  \View::make($vistaurl, compact('productos', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Reporte Inventario Existencias '.$date.'.pdf');
+    }          
 }
 
 

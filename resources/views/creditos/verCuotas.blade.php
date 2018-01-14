@@ -18,11 +18,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
+          <h3 class="page-header"><i class="fa fa-user "></i> Detalle del credito</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create"> Creditos Pendientes : </a></li>
+            <li><i class="fa fa-pencil-square-o"></i>Cuotas :</li>
           </ol>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5><b>Tabla de datos<b></h5>
+            <h5><b>Tabla de cuotas<b></h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>
@@ -42,9 +42,6 @@
                             </div>
                             <br><br>
           <div class="widget-content nopadding">
-            <div align="center">
-               <button type="submit"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal2">Realizar Pago</button>
-            </div>
             
 <table class="table table-bordered table-advance table-hover table-striped data-table"  style="background-color: #c8daea "  >
               <thead style="background-color: SteelBlue">
@@ -80,13 +77,16 @@
                 </tbody>
                 <tfoot>                                 
                  <tr align="center">                             
-                     <td colspan="2"><p style="font-weight: bold;">Total</p></td>
+                     <td colspan="2"><p style="font-weight: bold;">TOTAL</p></td>
                      <td colspan="1" ><p style="font-weight: bold;"><?php echo round($total3,2);?></p></td>
                      <td colspan="1" ><p style="font-weight: bold;"><?php echo round($total2,2);?></p></td>
                      <td colspan="1" ><p style="font-weight: bold;"><?php echo round($total,2);?></p></td>
                  </tr>
                 </tfoot>
             </table>
+            <div align="center">
+               <button type="submit"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal2">Realizar Pago</button>
+            </div>
           </div>
         </div>
         
@@ -109,7 +109,7 @@
         <span class="col-md-2  text-center" style="color: white;" >
           <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
         </span>
-          <h4 class="modal-title" id="gridModalLabel3" >Registar pago</h4>
+          <h4 class="modal-title" id="gridModalLabel3" >Registrar pago</h4>
 
       </div>
 
@@ -117,9 +117,7 @@
 
         <div class="container-fluid bd-example-row">
 
-          {!!Form::model($pago,['method'=>'PATCH','route'=>['creditos.update',$pago->id]])!!}
-          
-              
+          {!!Form::model($pago,['method'=>'PATCH','route'=>['creditos.update',$pago->id],'target'=>'_blank'])!!}
              
               <br>
               <div class="form-group">
@@ -132,7 +130,7 @@
                         <span id="cajavendertexto"></span>
                         <input type="hidden" id="max" name="max" value="{{ $pago->pendiente }}">
                         <input type="hidden" id="min" name="min" value="{{ $pago->monto }}">
-
+                        <input type="hidden" name="con" value="<?= $con;?>">
                                 
                     </div>  
               </div> 
@@ -195,8 +193,8 @@
 
               <div class="modal-footer">
 
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Aceptar</button>
+                <button type="button" onclick="refresh()" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="submit" onclick="refresh()" class="btn btn-primary">Aceptar</button>
 
               </div>
 
@@ -223,6 +221,7 @@
         </div>
     </div>
 @endsection
+{!!Html::script('js/actualizar.js')!!}
  <?php 
 $time=time();
     

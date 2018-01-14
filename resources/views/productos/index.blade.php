@@ -17,10 +17,10 @@
 				<strong> •Sea creado con éxito el registro</strong>
 				</div>
 				@endif
-					<h3 class="page-header"><i class="fa fa-truck "></i>  ver productos</h3>
+					<h3 class="page-header"><i class="icon_document_alt"></i>  lista productos</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-						<li><i class="fa fa-truck"></i>productos</li>
+						<li><i class="icon_document_alt"></i>productos</li>
 						<li><i class="fa fa-pencil-square-o"></i>registro de productos</li>
 					</ol>
 				</div>
@@ -31,7 +31,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5>tabla de productos</h5>
+            <h5>Tabla de productos</h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>
@@ -47,7 +47,7 @@
                   <th style="color: black">Código</th>
                   <th style="color: black">Nombre</th>
                   <th style="color: black">Marca</th>
-                  <th style="color: black">costo promedio</th>
+                  <th style="color: black">Costo promedio</th>
                   <th style="color: black">%Ganancia</th>
                  
                   <th style="color: black">Precio de venta</th>

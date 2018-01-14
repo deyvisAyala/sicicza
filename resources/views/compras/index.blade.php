@@ -17,11 +17,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-truck "></i>Compras</h3>
+          <h3 class="page-header"><i class="fa fa-shopping-cart"></i>lista de compras</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create">Regitrar compras</a></li>
+            <li><i class="fa fa-shopping-cart"></i>Compras</li>
+            <li><i class="fa fa-pencil-square-o"></i>Ver compras</li>
           </ol>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5><b>Tabla de datos<b></h5>
+            <h5><b>Tabla de compras<b></h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>
@@ -45,11 +45,11 @@
               <thead style="background-color: SteelBlue">
                 <tr>
                   <th style="color: black">#</th>
-                  <th style="color: black">Descripcion</th>
+                  <th style="color: black">Descripciòn</th>
                   <th style="color: black">Monto</th>
                   <th style="color: black">Fecha compra</th>
                   <th style="color: black">Numero factura</th>
-                  <th style="color: black">Accion</th>
+                  <th style="color: black">Acciòn</th>
                  
                 </tr>
               </thead>

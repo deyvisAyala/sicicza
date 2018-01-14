@@ -5,10 +5,10 @@
           <section class="wrapper">
       <div class="row" style="background-color: #b3cccc">
         <div class="col-lg-12">
-          <h3 class="page-header"><i class="fa fa-truck "></i> Productos</h3>
+          <h3 class="page-header"><i class="icon_document_alt"></i>Registrar Productos</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-truck"></i>productos</li>
+            <li><i class="fa fa-file-text"></i>productos</li>
             <li><i class="fa fa-pencil-square-o"></i>Registrar producto</li>
           </ol>
         </div>
@@ -33,7 +33,7 @@
                         <div class="form-group">
                              <div class="col-md-offset-2 col-lg-1" ><td><b>Nombre:</b></div>
                             <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
-                             <span class="input-group-addon"><i class="fa fa-user " style="color:MediumSeaGreen "></i></span>
+                             <span class="input-group-addon"><i class="icon_document_alt" style="color:MediumSeaGreen "></i></span>
                                 <input id="nom" name="nomProducto" type="text" placeholder="Ingrese el nombre del Producto" required class="form-control">
                                 
                             </div>
@@ -44,7 +44,7 @@
                          <div class="col-md-offset-2 col-lg-1" ><td><b>Marca:</b></div>
                             <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
                                          
-                             <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
+                             <span class="input-group-addon"><i class="fa fa-file-text" style="color:MediumSeaGreen "></i></span>
                            
                                        <select class="form-control" name="idMarca">
                                

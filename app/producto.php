@@ -72,6 +72,32 @@ class producto extends Model
  
    }
 
+   public static function sacarProductosEnExisencia(){
+       return DB::table('productos')
+            
+
+            ->join('proveedors', 'proveedors.id', '=', 'productos.idProveedor')
+            ->where('productos.estProducto','=','true')
+            ->where('productos.existencia','>','0')
+            ->select('productos.*','proveedors.nomProveedor')
+            ->orderBy('productos.id')
+            ->get();
+ 
+   }
+
+    public static function sacarProductosNoEnExisencia(){
+       return DB::table('productos')
+            
+
+            ->join('proveedors', 'proveedors.id', '=', 'productos.idProveedor')
+            ->where('productos.estProducto','=','true')
+            ->where('productos.existencia','=','0')
+            ->select('productos.*','proveedors.nomProveedor')
+            ->orderBy('productos.id')
+            ->get();
+ 
+   }
+
  
 }
 

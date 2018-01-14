@@ -17,11 +17,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-truck "></i>Ventas</h3>
+          <h3 class="page-header"><i class="fa fa-money "></i>Ventas</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create">Detalles de la venta</a></li>
+            <li><i class="fa fa-money"></i>Ventas</li>
+            <li><i class="fa fa-pencil-square-o"></i>Detalles de la venta</li>
           </ol>
         </div>
       </div>

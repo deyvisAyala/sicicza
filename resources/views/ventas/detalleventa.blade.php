@@ -18,10 +18,10 @@
         </div>
         @endif
         
-          <h3 class="page-header"><i class="fa fa-truck "></i> Venta:</h3>
+          <h3 class="page-header"><i class="fa fa-money "></i> Venta:</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-truck"></i>detalle</li>
+            <li><i class="fa fa-list"></i>Detalle</li>
             
           </ol>
         </div>

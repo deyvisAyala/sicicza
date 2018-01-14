@@ -105,45 +105,34 @@ td.sansserif {
     <div class="box-header with-border">
       <table width="556" border="" align="" cellpadding="10">
         <tr>
-          <td align="left"><img class="al" src="" width="125px" height="75px"></td>
-          <article><!--Aqui esta el donde se muestra una descripcion-->
+          <td align="left" bgcolor="#E0F8E6"><?=  $date; ?></td> 
+          <article><!--Aqesta el donde se muestra una descripcion-->
            <table border="0" width="330px" align="left">
        
           <tr>
-          <td>
-            <p class="serif"><b>COMERCIAL PERAZA, S.A DE C.V</b></p>
+          <td bgcolor="#ECF6CE">
+            <p class="serif"><b>COMERCIAL SANTA CLARITA, S.A DE C.V</b></p>
              <p class="serif"><b>ACTIVIDADES DE  COMERCIALES</b></p>
-             <p class="serif">Departamento DE SAN VICENTE * El Salvador* Centroamérica  </p>
+             <p class="serif">Departamento DE LA PAZ, ZACATECOLUCA, El Salvador-Centroamérica  </p>
               <p class="serif">Telefono: (503) 7712-8976 * Fax: </p>
              </td>
-           
-           </tr>
-           </table>
-            </article>
-          <article><!-- Aqui carga los datos del cua-->
-           <table border="1" width="170px" align="right">
-          
-          <tr>
-          <td>
-            <p class="serif">FACTURA</p>
+           <td bgcolor= "#F2F5A9">
+                <p class="serif">FACTURA</p>
             
-             <p class="colornf">N°</p>
+                <p class="colornf">N°</p>
              
-             <p class="serif">REGISTRO N° </p>
-              <p class="serif">NIT: </p>
-             </td>
-           
+                <p class="serif">REGISTRO N° 182548-1</p>
+                <p class="serif">NIT:0207-061255-001-5</p>
+           </td>
            </tr>
            </table>
             </article>
-
-          <td width="350" align="center" colspan="8">
           
-           
-            </td>
-          <td>&nbsp;</td>
+
+          <td width="350" align="center" colspan="8"> </td>
+          <td bgcolor="#E0F8E6">&nbsp;<?=  $date1; ?></td>
         </tr>
-         </tr>
+        
         
         
     </table>
@@ -151,33 +140,29 @@ td.sansserif {
    <br> <br> <br> <br> <br> <br>
 
           <article><!-- Aqui carga los datos del cua-->
-           <table border="0" width="350px" align="left">
+            
+               <table border="3" width="10px" align="right" >
           
-          <tr>
-          <td>
-            <p class="serif1">Cliente:______________________________________</p>
+                  <tr>
+                    <td bgcolor="#ECF6CE">
+                       <p class="serif1">Cliente:______________________________________</p>   
             
-             <p class="serif1">Dirección:____________________________________</p>
-            <p></p>
-             </td>
+                       <p class="serif1">Dirección:____________________________________</p>
+                  </td>
+                  <td bgcolor="#ECF6CE">
+                       <p class="serif1">Dui:______________________________________</p>   
+            
+                       <p class="serif1">Nit:____________________________________</p>
+                  </td>
+                </tr>
+              </table>
+             
+         
+         </article>
+            
            
-           </tr>
-           </table>
-            </article>
-            
-            <article><!-- Aqui carga los datos del cua-->
-           <table border="0" width="350px" align="right">
-          <tr>
-          <td>
-            <p class="serif1">Fecha:____________________________________</p>
-            
-             </td>
-           
-           </tr>
-           </table>
-            </article>
   </div><!-- /.box-header -->
-  <br><br><br><br><br><br>
+  <br><br><br><br>
   <div class="box-body">
     <table class="table" border="1" style="width:100%" >
       <thead>
@@ -196,25 +181,29 @@ td.sansserif {
 
       </tbody>
       <tfoot>
-           <tr>
-             <td></td>
-             <td></td>
-             <td colspan="3" rowspan="1"></td>
-           </tr>
-           <tr>
-             <td>
-            
-              
-             </td>
-              <td>
-            <p class="serif"></p>
-            
-             <p class="serif"></p>
-             
-             <p class="serif"></p>
-              
-             </td>
-            <td colspan="3" rowspan="3">
+        <?php
+                    $suma=0;
+                ?>
+            @foreach($h as $prove) 
+            <tr>
+           <td>{{$prove->cantidad}}</td>
+           <td>{{$prove->nomProducto}}</td>
+           <td>{{$prove->precio}}</td>
+           <td>-------</td>
+           <td>
+            <?php
+                                                           
+                                                            $a=($prove->cantidad*$prove->precio);
+                                                           $suma=$suma+$a;
+                                                            echo $a;
+                                                            ?>
+          </td>
+
+            </tr>
+          @endforeach
+           <tr align="right">
+              <td colspan="2" rowspan="1"><p class="serif"> </p></td>
+            <td colspan="3" rowspan="2">
               
               <p class="serif">Suma: </p>
             
@@ -223,16 +212,13 @@ td.sansserif {
              <p class="serif">Sub-Total:</p>
             <p class="serif">(-)Iva-Retenida:</p>
             <p class="serif">Ventas Extensas:</p>
-             <p class="serif">Ventas Total:</p>
+             <p class="serif">Ventas Total: <?php  echo $suma;?></p>
             </td>
              </tr>
-             <tr align="right">
-                  <td colspan="2" rowspan="1"><p class="serif"> </p></td>
-                 
-             </tr>
-             <tr align="right">
-             <td colspan="2" ><p class="serif"></p></td>
             
+             <tr align="right">
+             <td></td>
+             <td></td>
              </tr>
               
       </tfoot>

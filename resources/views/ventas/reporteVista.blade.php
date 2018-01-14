@@ -56,39 +56,6 @@
               </div>
                <!-- *****************************    segundo    formulario    **************************-->
               
-               <!-- *****************************    segundo    formulario    **************************-->
-              
-              <div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel" style="background-color: #d9e6f2  ">
-                          <header class="panel-heading">
-                             Reporte de Cliente con Referencia
-                          </header>
-
-                          <div class="panel-body">
-                              <div class="form">
-                                  
-                                  {!! Form::open(['url'=>['reporteCliente'],'method'=>'POST','target'=>'_blank']) !!}
-                                     
-                                     <div class="box-header">                            
-                          </div><!-- /.box-header -->
-                          <div class="box-body pad">
-                              
-                                      
-                                        
-                                      <br>
-                              {!! Form::submit('Generar Informe de Clientes',['class'=>'btn btn-info']) !!}  </form>
-                              </div>
-
-
-                          </div>
-
-                      </section>
-                  </div>
-              </div>
-
-               
-              <!-- page end-->
               
 
               <!-- page end-->

@@ -21,7 +21,7 @@
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create"> compras  </a></li>
+            <li><i class="fa fa-shopping-cart"></i> compras </li>
           </ol>
         </div>
       </div>

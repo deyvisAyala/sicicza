@@ -5,10 +5,10 @@
           <section class="wrapper">
       <div class="row" style="background-color: #b3cccc">
         <div class="col-lg-12">
-          <h3 class="page-header"><i class="fa fa-truck "></i> Marcas</h3>
+          <h3 class="page-header"><i  class="fa fa-file-text" ></i>Registrar Marcas</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-truck"></i>Marcas</li>
+            <li><i class="fa fa-file-text"></i>Marcas</li>
             <li><i class="fa fa-pencil-square-o"></i>Registrar marcas</li>
           </ol>
         </div>
@@ -33,7 +33,7 @@
                         <div class="form-group">
                              <div class="col-md-offset-2 col-lg-1" ><td><b>Nombre:</b></div>
                             <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-5">
-                             <span class="input-group-addon"><i class="fa fa-user " style="color:MediumSeaGreen "></i></span>
+                             <span class="input-group-addon"><i class="fa fa-file-text " style="color:MediumSeaGreen "></i></span>
                                 <input id="nom" name="nomMarca" type="text" placeholder="Ingrese el nombre de la marca" required class="form-control">
                                 
                             </div>

@@ -18,11 +18,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
          @endif
-          <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
+          <h3 class="page-header"><i class="fa fa-user "></i>  lista de clientes</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create">Regitrar cliente</a></li>
+            <li><i class="fa fa-user"></i>Clientes</li>
+            <li><i class="fa fa-pencil-square-o"></i>Ver clientes</li>
           </ol>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5><b>Tabla de datos<b></h5>
+            <h5><b>Tabla de clientes<b></h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>

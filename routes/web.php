@@ -82,6 +82,11 @@ Route::match(['get','post'],'stock','ProductoController@stock');
 });
 //tony
 Route::match(['get','post'],'kardex','ProductoController@listaProductos');
+Route::match(['get','post'],'factura','ventasController@pdfFactura');
+//12/01/2017
+Route::match(['get','post'],'existencias','ProductoController@listaExsistencias');
+Route::match(['get','post'],'NoExistencias','ProductoController@listaNoExsistencias');
+Route::match(['get','post'],'ticked','cuotasController@vistaTicked');
 
 
 //te importa todas las rutas de los controladores

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte Proveedores</title>
+  <title>Reporte Clientes</title>
   <style>
   footer {
       position: fixed;
@@ -99,7 +99,6 @@ table tr:nth-child(2n-1) td {
                   <th style="color: black">Dui</th>
                   <th style="color: black">Nit</th>
                   <th style="color: black">Telefono</th>
-                  <th style="color: black">E-mail</th>
                   <th style="color: black">Direccion</th>
             </tr>
           </thead>
@@ -110,12 +109,28 @@ table tr:nth-child(2n-1) td {
            <td>{{$prove->dui}}</td>
            <td>{{$prove->nit}}</td>
            <td>{{$prove->telCliente}}</td>
-           <td>{{$prove->EmailCliente}}</td>
            <td>{{$prove->dirCliente}}</td>
             </tr>
           @endforeach
         </tbody>
       </table>
+      <footer>
+    <table>
+    
+      <tr>
+        <td>
+            <p class="izq">
+              Comercial Santa Clarita S.A de C.V
+            </p>
+        </td>
+        <td>
+          <p class="page">
+            Página
+          </p>
+        </td>
+      </tr>
+    </table>
+  </footer>
      </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div>

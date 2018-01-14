@@ -17,11 +17,11 @@
 				<strong> •Sea creado con éxito el registro</strong>
 				</div>
 				@endif
-					<h3 class="page-header"><i class="fa fa-truck "></i>  ver Marcas</h3>
+					<h3 class="page-header"><i class="icon_document_alt"></i>  lista de Marcas</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-						<li><i class="fa fa-truck"></i>Marcas</li>
-						<li><i class="fa fa-pencil-square-o"></i>registro de Marcas</li>
+						<li><i class="fa fa-file-text"></i>Marcas</li>
+						<li><i class="fa fa-pencil-square-o"></i>Ver marcas</li>
 					</ol>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5>tabla de Maquinaria</h5>
+            <h5>Tabla de marcas</h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>

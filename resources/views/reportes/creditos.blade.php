@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte Proveedores</title>
+  <title>Reporte Creditos</title>
   <style>
   footer {
       position: fixed;
@@ -111,6 +111,23 @@ table tr:nth-child(2n-1) td {
           @endforeach
         </tbody>
       </table>
+       <footer>
+    <table>
+    
+      <tr>
+        <td>
+            <p class="izq">
+              Comercial Santa Clarita S.A de C.V
+            </p>
+        </td>
+        <td>
+          <p class="page">
+            Página
+          </p>
+        </td>
+      </tr>
+    </table>
+  </footer>
      </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div>

@@ -8,10 +8,11 @@
           <section class="wrapper">
       <div class="row" style="background-color: #b3cccc" >
         <div class="col-lg-12">
-          <h3 class="page-header"><i class="fa fa-truck "></i> Proveedores</h3>
+          <h3 class="page-header"><i class="fa fa-truck "></i> Registrar Proveedores</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-eye"></i><a href="/sicicza/public/proveedor">Ver Proveedores</a></li>
+            <li><i class="fa fa-truck"></i>Proveedores</li>
+            <li><i class="fa fa-pencil-square-o"></i>Registrar Proveedores</li>
             
           </ol>
         </div>

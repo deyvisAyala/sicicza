@@ -17,11 +17,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-user "></i>  ver clientes</h3>
+          <h3 class="page-header"><i class="fa fa-user "></i>  Ver Creditos</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
             
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/cliveedor/create">Regitrar cliente</a></li>
+            <li><i class="fa fa-pencil-square-o"></i>creditos</li>
           </ol>
         </div>
       </div>

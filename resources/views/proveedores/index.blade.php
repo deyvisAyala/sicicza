@@ -17,11 +17,11 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header"><i class="fa fa-truck "></i>  ver proveedores</h3>
+          <h3 class="page-header"><i class="fa fa-truck "></i>  lista de proveedores</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            
-            <li><i class="fa fa-pencil-square-o"></i><a href="/sicicza/public/proveedor/create">Regitrar proveedor</a></li>
+            <li><i class="fa fa-truck"></i>proveedores</li>
+            <li><i class="fa fa-pencil-square-o"></i>Ver proveedores</li>
           </ol>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="widget-box">
           <div class="widget-title">
              <span class="icon"><i class="icon-th"></i></span> 
-            <h5><b>Tabla de datos<b></h5>
+            <h5><b>Tabla de proveedores<b></h5>
           </div>
           <div class="form-group" align="right">
                               <span class="col-md-1 col-md-offset-7 text-center"><i class="fa fa-search bigicon icon_nav"></i>Buscar</span>

@@ -46,11 +46,12 @@ class creditosController extends Controller
     {
        
          $pago = \App\pago::pagosXCliente2($id,true);
+
         return view('creditos.verCreditos',compact('pago'));
     }
      public function historial($id)
     {
-       
+          
          $pago = \App\pago::pagosXCliente2($id,false);
         return view('creditos.verHistorial',compact('pago'));
     }
@@ -58,8 +59,12 @@ class creditosController extends Controller
     {
        
         $pago=\App\pago::find($id);
+        $cli = \App\facturaVenta2::find($pago->idfactura);
+
+        $cli2=\App\cliente::find($cli->idcliente); 
+        
         $cuotas=\App\cuota::where('idpago',$id)->get();
-        return view('creditos.verCuotas',compact('cuotas','pago'));
+        return view('creditos.verCuotas',compact('cuotas','cli2','pago'));
       
     }
 
@@ -85,6 +90,20 @@ class creditosController extends Controller
      */
     public function update(Request $request, $id)
     {
+         $comp2 =\App\cuota::where('idpago',$id)->get();
+
+          $cuota=\App\pago::find($id);
+          $cli = \App\facturaVenta2::find($cuota->idfactura);
+        $cli2=\App\cliente::find($cli->idcliente);  
+        $cliente=\App\cliente::All(); 
+        
+        $ids=count($comp2);
+        if($ids==$cuota->cuotas)
+        {
+              return view('creditos.index',compact('cliente')); 
+        }
+        else{
+
         //
         \App\cuota::create([
              'monto'=>$request['monto'],  
@@ -116,10 +135,27 @@ class creditosController extends Controller
 
         }
 
-            
-         $ruta='creditos/'.$request['idProveedor'].'';
-       return redirect($ruta);
+  
 
+      $cuota= \App\cuota::All();
+      
+       foreach ($cuota as $c) {
+           $cuo=$c;
+          
+       }
+        $date = date('d-m-Y');
+        $date1 = date('g:i:s a');
+        $con = $request['con'];
+        $cuo->fecha=date("d-m-Y", strtotime("$cuo->fecha"));
+
+//dd($con);
+      $vistaurl="reportes.ticked";
+      $view =  \View::make($vistaurl, compact('cuo','con','cli2', 'date','date1'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      
+     return $pdf->stream('Ticked '.$date.'.pdf');
+ }
        
     }
 

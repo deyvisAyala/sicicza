@@ -73,11 +73,11 @@
                   <td>{{ $pro->existencia}}</td>
                   
                   
-                  
+                   <td>
                  {!!Form::open(['route'=>['producto.show',$pro->id],'method'=>'GET'])!!}
-                                                        <input type="submit" name="" value="KARDEX"   class="btn btn-info btn-sm active " >
-                                                        {!!Form::close()!!}  
-
+                 <input type="submit" name="" value="KARDEX"   class="btn btn-info  " >
+                 {!!Form::close()!!}  
+                    </td>
                    
                 </tr>
                 @endforeach

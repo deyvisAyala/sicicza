@@ -92,7 +92,7 @@ table tr:nth-child(2n-1) td {
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div><!-- /.box-header -->
       <div class="box-body">
-        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE INVENTARIO</h3></div>
+        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE INVENTARIO QUE NO EXISTE EN EXISTENCIAS</h3></div>
         <table class="table-wrapper" >
            <thead>
             <tr>

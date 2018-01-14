@@ -58,7 +58,7 @@ $sum=0;
                               <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Cantidad:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                <span class="input-group-addon"  style="color:MediumSeaGreen ">#<i class="fa fa yaria-hidden="true" " style="color:MediumSeaGreen "></i></span>
-                                 <input id="ssss" name="cantidad" type="number" min="1" placeholder="Cantidad a comprar" class="form-control " required onkeyup="sumar();">
+                                 <input id="ssss" name="cantidad" type="text" min="1" placeholder="Cantidad a comprar" class="form-control ingreso" required onkeyup="sumar();">
                              </div>
 
                                             

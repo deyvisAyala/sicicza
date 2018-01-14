@@ -11,7 +11,7 @@
           <h3 class="page-header"><i class="fa fa-truck "></i> Reporte Venta</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>
-            <li><i class="fa fa-eye"></i><a href="/sicicza/public/proveedor">Reportes</a></li>
+            <li><i class="fa fa-eye"></i>Reportes</li>
             
           </ol>
         </div>
@@ -21,7 +21,7 @@
                   <div class="col-lg-12">
                       <section class="panel" style="background-color: #d9e6f2  ">
                           <header class="panel-heading">
-                              REPORTE DE INVENTARIO
+                              REPORTE DE INVENTARIO TOTAL
                           </header>
 
                           <div class="panel-body">
@@ -39,7 +39,48 @@
               </div>
                <!-- *****************************    segundo    formulario    **************************-->
               
+             <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel" style="background-color: #d9e6f2  ">
+                          <header class="panel-heading">
+                              REPORTE DE INVENTARIO EXISTENCIAS
+                          </header>
 
+                          <div class="panel-body">
+                              <div class="form">
+                                  
+                                 {!! Form::open(['url'=>['existencias'],'method'=>'POST','target'=>'_blank']) !!}
+                                     <br>
+                              {!! Form::submit('Generar Informe',['class'=>'btn btn-info']) !!}  </form>
+
+
+                          </div>
+
+                      </section>
+                  </div>
+              </div>
+
+               <!-- *****************************    TERCER    formulario    **************************-->
+               <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel" style="background-color: #d9e6f2  ">
+                          <header class="panel-heading">
+                              REPORTE DE INVENTARIO NO EN EXISTENCIAS
+                          </header>
+
+                          <div class="panel-body">
+                              <div class="form">
+                                  
+                                 {!! Form::open(['url'=>['NoExistencias'],'method'=>'POST','target'=>'_blank']) !!}
+                                     <br>
+                              {!! Form::submit('Generar Informe',['class'=>'btn btn-info']) !!}  </form>
+
+
+                          </div>
+
+                      </section>
+                  </div>
+              </div>
               <!-- page end-->
               
           </section>

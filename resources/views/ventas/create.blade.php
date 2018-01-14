@@ -19,7 +19,7 @@
         <strong> •Sea creado con éxito el registro</strong>
         </div>
         @endif
-          <h3 class="page-header" ><i class="fa fa-shopping-cart "></i> Registro De Ventas</h3>
+          <h3 class="page-header" ><i class="fa fa-money"></i>Registrar Ventas</h3>
           <ol class="breadcrumb" style="background-color: ">
             <li><i class="fa fa-home"></i><a href="/sicicza/public/proveedor/create">inicio</a></li>
             <li><i class="fa fa-money"></i>Ventas</li>
@@ -43,14 +43,14 @@
 
 
                                  <div class="form-group ">
-                                    <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Buscar:</b></div>
+                                    <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Marca:</b></div>
                                                      
                                       <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                          
-                                        <span class="input-group-addon"><i class="fa fa-search " style="color:MediumSeaGreen "></i></span>
+                                        <span class="input-group-addon"><i class="fa fa-file-text " style="color:MediumSeaGreen "></i></span>
                            
                                        <select class="form-control"  id="buscar" name="buscar">
-                                       <option  value="0" >seleccione</option>
+                                       <option  value="0" >seleccione marca</option>
                                 @foreach($marca as $mar)
                                        
                                 <option  value="{{ $mar->id }}" >{{ $mar->nomMarca }} </option>
@@ -61,7 +61,7 @@
                                       </div>
 
 
-                                       <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Nombre:</b></div>
+                                       <div class=" col-md-1 col-md-offset-0 col-lg-1" ><td><b>Producto:</b></div>
                                <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
 
                                 <span class="input-group-addon"><i class="fa fa-pencil-square-o " style="color:MediumSeaGreen "></i></span>
@@ -106,7 +106,7 @@
                                          
                                         <span class="input-group-addon"><i class="fa fa- " style="color:MediumSeaGreen ">#</i></span>
                            
-                                         <input id="telefono" name="telefono" type="text" placeholder="digite una cantidad" class="form-control " required >
+                                         <input id="telefono" name="telefono" type="text" min=1 placeholder="digite una cantidad" class="form-control ingreso" required >
                                           
                                       </div>
 
@@ -290,7 +290,7 @@
                                            <div class="form-group ">
                                              <div class="col-md-2  col-lg-2 col-md-offset-1" > <td><b># factura:</b></div>
                                             <div class="col-md-3 col-lg-9" >
-                                            <input type="text" id="numfactura" name="numfactura" class="textbox"  placeholder="numero factura"  required="">
+                                            <input type="text" min="1"  id="numfactura" name="numfactura" class="textbox ingreso"  placeholder="numero factura"  required="">
                                             </div>
 
                                              <br>  <br>

@@ -3,9 +3,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte Proveedores</title>
+  <title>Reporte Inventario</title>
   <style>
-  footer {
+ 
+   footer {
       position: fixed;
       left: 0px;
       bottom: -50px;
@@ -32,6 +33,7 @@ body {
     margin: 0;
     padding: 0;
     color: #777777;
+
   }
 table {
     border-collapse: collapse;
@@ -89,36 +91,53 @@ table tr:nth-child(2n-1) td {
         <h3 align="right" style="position: absolute; left:550px; top:10px; z-index: 1;"><img class="al" width="120px" height="130px" src="img/sicicza2.png" ></h3>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div><!-- /.box-header -->
-      @foreach($clientes as $prove)
       <div class="box-body">
-        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;" ><h3>{{ $prove->nomCliente }}</h3></div>
+        <div style="position: absolute;left: 230px; top: 210px; z-index: 1;"><h3>LISTADO DE INVENTARIO EXISTENCIAS</h3></div>
         <table class="table-wrapper" >
            <thead>
             <tr>
-                  <th style="color: black">Nombre Familiar</th>
-                  <th style="color: black">Telefono F</th>
-                  <th style="color: black">Direccion F</th>
-                  <th style="color: black">Nombre Personal</th>
-                  <th style="color: black">Telefono P</th>
-                  <th style="color: black">Direccion P</th>
+                  <th style="color: black">Código</th>
+                  <th style="color: black">Nombre</th>
+                  <th style="color: black">Proveedor</th>
+                  <th style="color: black">Costo Promedio</th>
+                  <th style="color: black">% Ganancia</th>
+                  <th style="color: black">Existencia</th>
             </tr>
           </thead>
           <tbody>
-             
+            @foreach($productos as $prove) 
             <tr>
-             <td>{{$prove->nomFamiliar}}</td>
-           <td>{{$prove->telFamiliar}}</td>
-           <td>{{$prove->dirFamiliar}}</td>
-           <td>{{$prove->nomPersonal}}</td>
-           <td>{{$prove->telPersonal}}</td>
-           <td>{{$prove->dirPersonal}}</td>
+             <td>{{$prove->id}}</td>
+           <td>{{$prove->nomProducto}}</td>
+           <td>{{$prove->nomProveedor}}</td>
+           <td>{{$prove->cPromedio}}</td>
+           <td>{{$prove->preProducto}}</td>
+           <td>{{$prove->existencia}}</td>
             </tr>
-            <br><br><br>
-         
+          @endforeach
         </tbody>
+
+        
+
       </table>
+       <footer>
+    <table>
+    
+      <tr>
+        <td>
+            <p class="izq">
+              Comercial Santa Clarita S.A de C.V
+            </p>
+        </td>
+        <td>
+          <p class="page">
+            Página
+          </p>
+        </td>
+      </tr>
+    </table>
+  </footer>
      </div><!-- /.box-body -->
-      @endforeach
     </div><!-- /.box -->
   </div>
 </body>
