@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\marcaRequest;
 class marcaController extends Controller
 {
 public function index() {  
@@ -21,13 +21,14 @@ public function index() {
     }
 
     //y el estore es para guardar los del create
-    public function store(request $request) { 
+    public function store(marcaRequest $request) { 
         //
     \App\marca::create([
             //modelo                //la vista create
             'nomMarca' => $request['nomMarca'],  
                   
         ]);
+           \App\Bitacora::bitacora("Registro de nueva Marca: ".$request['nomMarca']);
      //adonde vamos
         return redirect('marca')->with('message','create');
     }
@@ -41,15 +42,13 @@ public function index() {
        
     }
 
-     public function update(Request $request, $id)
+     public function update(marcaRequest $request, $id)
     {
         $trab = \App\marca::find($id);
         
         $trab->nomMarca = $request['nomMarca'];
         $trab->save();
-        
-
-
+    \App\Bitacora::bitacora("Modificacion de Marca: ".$request['nomMarca']);
     return redirect('/marca');
     }
 }

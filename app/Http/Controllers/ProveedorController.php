@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\proveedor;
-
+use App\Http\Requests\proveedorRecuest;
 class ProveedorController extends Controller
 {
     //el create es´para levantar el formulario
@@ -14,7 +14,7 @@ class ProveedorController extends Controller
     }
 
     //y el estore es para guardar los del create
-    public function store(request $request) { 
+    public function store(proveedorRecuest $request) { 
         //
      proveedor::create([
             //modelo                //la vista create
@@ -23,6 +23,8 @@ class ProveedorController extends Controller
             'EmailProveedor' => $request['EmailProveedor'],
             'dirProveedor' => $request['dirProveedor'],            
         ]);
+
+        \App\Bitacora::bitacora("Registro de nuevo Proveedor: ".$request['nomProveedor']);
      //adonde vamos
         return redirect('proveedor')->with('message','create');
     }
@@ -47,7 +49,7 @@ class ProveedorController extends Controller
         //$trab->sueldoEmp = $request['salario'];
         //$trab->cargoEmp = $request['cargo'];
         
-        
+        \App\Bitacora::bitacora("Modificacion de proveedor: ".$request['nomProveedor']);
         //$trab->sexEmp = $request['sexo'];correoEmp
         //$trab->contraEmp = $request['desc'];
         }
@@ -55,10 +57,12 @@ class ProveedorController extends Controller
         if($aux=='2')
         {
             $trab->estProveedor =false;
+            \App\Bitacora::bitacora("Se desactivo el proveedor: ".$trab->nomProveedor);
         }
         if($aux=='3')
         {
             $trab->estProveedor =true;
+               \App\Bitacora::bitacora("Se activo el proveedor: ".$trab->nomProveedor);
         }
 
 

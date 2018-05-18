@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function postGenerateBackup()
+    {
+        exec('C:\Windows\System32\cmd.exe /C START C:\xampp\htdocs\sicicza\backup.bat');
+        return redirect('/home')->with('create','Backup  creado con éxito');
+
+    }
 }

@@ -49,7 +49,7 @@
                                      <div class=" col-md-12 col-md-offset-0 col-lg-12" ><td><b>Telefono:</b></div>
                                <div class="input-group input-group-lg-12 col-md-offset-0 col-lg-12">
                                 <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
-                                 <input id="telefono1" name="telefono1" type="text" placeholder="Ej. 7777-7777" class="form-control " required >
+                                 <input id="telefono1" name="telefono1" type="text" placeholder="Ej. 7777-7777" class="form-control phone" required >
                                   </div>
                                     </div>
 
@@ -79,7 +79,7 @@
                                      <div class=" col-md-12 col-md-offset-0 col-lg-12" ><td><b>Telefono:</b></div>
                                <div class="input-group input-group-lg-12 col-md-offset-0 col-lg-12">
                                 <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
-                                 <input id="telefono2" name="telefono2" type="text" placeholder="Dui. Ej:77777777-7" class="form-control " required >
+                                 <input id="telefono2" name="telefono2" type="text" placeholder="Dui. Ej:7777-7777" class="form-control phone" required >
                                   </div>
                                     </div>
 

@@ -27,7 +27,7 @@ $('#cargar').on('change',function(e)
 		$("#idProveedor").val(value.nomProveedor);
 		precioventa=(parseFloat(value.cPromedio) * (parseFloat(value.preProducto) / 100));
 		precioventa2=(parseFloat(precioventa)+(parseFloat(value.cPromedio)));
-		$("#preUnitario").val(precioventa2);
+		$("#preUnitario").val(precioventa2.toFixed(2));
 
 	});
 	});

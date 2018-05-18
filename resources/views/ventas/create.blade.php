@@ -84,7 +84,7 @@
                                          
                                         <span class="input-group-addon"><i class="fa fa-truck " style="color:MediumSeaGreen "></i></span>
                            
-                                         <input id="idProveedor" name="idProveedor" type="text" placeholder="Ej. proveedor" class="form-control " required >
+                                         <input id="idProveedor" name="idProveedor" type="text" placeholder="Ej. proveedor" class="form-control " disabled="">
                                           
                                       </div>
 
@@ -94,7 +94,7 @@
 
                                 <span class="input-group-addon"><i class="fa fa-money " style="color:MediumSeaGreen "></i></span>
                                 
-                                 <input id="preUnitario" name="preUnitario" type="text" placeholder="0.00" class="form-control " required >
+                                 <input id="preUnitario" name="preUnitario"  type="text" placeholder="0.00" class="form-control " required >
                              </div>
                             </div>
                             <br><br><br>
@@ -116,7 +116,7 @@
 
                                 <span class="input-group-addon"><i class="fa fa-money " style="color:MediumSeaGreen "></i></span>
                                 
-                                 <input id="nit" name="nit" type="text" placeholder="0.00" class="form-control " required >
+                                 <input id="nit" name="nit" type="text" placeholder="0.00" class="form-control " disabled="">
                              </div>
                             </div>
                             <br><br><br>
@@ -274,7 +274,7 @@
                 <div class="container-fluid bd-example-row" style="background:silver">
                     
 
-                       {!! Form::open(['route'=>'ventas.store','method'=>'POST','class'=>'formhorizontal'])
+                       {!! Form::open(['route'=>'ventas.store','method'=>'POST','target'=>'_blank','class'=>'formhorizontal'])
 !!}
                        
                         <fieldset>
@@ -312,10 +312,10 @@
 
                                             
                                             <div class="col-md-3 col-lg-9" >
-                                            <input type="text" id="clien" name="" class="textbox"  placeholder="nombre del cliente"  required="">
+                                            <input type="text" id="clien" name="" class="textbox"  placeholder="nombre del cliente" disabled=""  >
                                             </div>
 
-                                            <input type="hidden" id="auxcli" name="idcliente" required="">
+                                            <input type="hidden" id="auxcli" name="idcliente" >
 
                                             <br>  <br> 
 

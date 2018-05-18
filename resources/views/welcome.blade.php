@@ -260,7 +260,7 @@ footer {
                   
               
              
-                  
+                    @if(Auth::user()->id == '1')
                        <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="fa fa-key"></i>
@@ -270,9 +270,11 @@ footer {
                       <ul class="sub">
                           <li><a class="" href="{{ url('/register') }}">USUARIOS</a></li>
                            <li><a class="" href="/sicicza/public/creditos/create">BITACORA</a></li>
+                           <li><a class="" href="/sicicza/public/postGenerateBackup">BACK UP</a></li>
+
                       </ul>
                   </li>
-                  
+                  @endif
                 
                 
                  
@@ -287,7 +289,7 @@ footer {
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">                          
-                          <li><a class="" href="profile.html">VER</a></li>
+                          <li><a class="" href ="/SICICZA/public/pdf/Ayuda2.pdf">VER</a></li>
                           
                       </ul>
                   </li>

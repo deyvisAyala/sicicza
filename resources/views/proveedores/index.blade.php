@@ -142,7 +142,7 @@
                                             <div class="col-md-3 col-lg-5" >
                                             <input type="text" id="ccoment" name="dirProveedor" class="textbox" placeholder="" value="{{ $prove->dirProveedor}}" required="">
                                          </div>
-                                       </div>
+                                    </div>
                                
                             </div> 
                             <br>
@@ -156,7 +156,8 @@
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
-                        {!! Form::close() !!}
+                        {!!Form::close()!!}
+
                 </div>
             </div>
         </div>

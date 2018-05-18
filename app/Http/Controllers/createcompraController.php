@@ -38,7 +38,7 @@ class createCompraController extends Controller
             'nfactura' => $request['nfactura'], 
                      
         ]);
-    
+          \App\Bitacora::bitacora("Registro de nueva Compra #Factura : ".$request['nfactura']);
         $gAux =facturaCompra::All();
         foreach ($gAux as $fac) {
             $ids=$fac->id;

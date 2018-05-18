@@ -29,6 +29,7 @@ class ClienteController extends Controller
             'dirCliente' => $request['direccion'],
            // 'estCliente' => $request['dirProveedor'],           
         ]);
+            \App\Bitacora::bitacora("Registro de nuevo Clientes: ".$request['nombre']);
      //adonde vamos
         return redirect('cliente')->with('message','create');
     }
@@ -41,7 +42,7 @@ class ClienteController extends Controller
         return view('clientes.index',compact('cliente','referencia'));      
     }
 
-      public function update(clienteRequest $request, $id)  //los recues llevan toda la info de form
+      public function update(Request $request, $id)  //los recues llevan toda la info de form
     {
         $cli =\App\cliente::find($id);
         $aux=$request['opcModificar'];
@@ -55,7 +56,7 @@ class ClienteController extends Controller
        
         //$cli->sueldoEmp = $request['salario'];
         //$cli->cargoEmp = $request['cargo'];
-        
+         \App\Bitacora::bitacora("Modificacion de Clientes: ".$request['nomcliente']);
         
         //$cli->sexEmp = $request['sexo'];correoEmp
         //$cli->contraEmp = $request['desc'];
@@ -64,16 +65,18 @@ class ClienteController extends Controller
         if($aux=='2')
         {
             $cli->estCliente =false;
+               \App\Bitacora::bitacora("Se desactivo el Cliente: ".$cli->nomCliente);
         }
         if($aux=='3')
         {
             $cli->estCliente =true;
+               \App\Bitacora::bitacora("Se activo el Cliente: ".$cli->nomCliente);
         }
 
 
         $cli->save();
         
-
+        
 
     return redirect('/cliente')-> with('message','update');
     }

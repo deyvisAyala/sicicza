@@ -33,10 +33,10 @@ class detallesCompra extends Model
    public static function sacarComprasPorProductos($id){
        return DB::table('detalles_compras')
            
-            ->join('facturaCompra', 'facturaCompra.id', '=', 'detalles_compras.idcomps')
+            ->join('factura_compras', 'factura_compras.id', '=', 'detalles_compras.idcomps')
             ->where('detalles_compras.idprods', '=', $id)
-            ->select('facturaCompra.*','detalles_compras.*')
-            ->orderBy('detalles_compras.id')
+            ->select('factura_compras.*','detalles_compras.*')
+            ->orderBy('factura_compras.created_at')
             ->get();
  
    }

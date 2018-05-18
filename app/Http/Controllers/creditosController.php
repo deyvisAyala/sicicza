@@ -22,7 +22,8 @@ class creditosController extends Controller
      */
     public function create()
     {
-         
+            $cc=\App\bitacora::barCan();
+            return view('bitacora.bitacora',compact('cc'));
     }
 
     /**
@@ -100,7 +101,7 @@ class creditosController extends Controller
         $ids=count($comp2);
         if($ids==$cuota->cuotas)
         {
-              return view('creditos.index',compact('cliente')); 
+              return view('creditos.index'); 
         }
         else{
 
@@ -112,6 +113,7 @@ class creditosController extends Controller
              'total'=>$request['total'],
              'idpago'=>$id,
             ]);
+        \App\Bitacora::bitacora("Pago de cuota del Cliente: ".$cli2->nomCliente);
 
         $comp2 =\App\cuota::where('idpago',$id)->get();
         
@@ -124,7 +126,7 @@ class creditosController extends Controller
             $cuota->pendiente=0;
             $cuota->fecPago=$request['fecha'];
             $cuota->save();
-            //$cli =\App\cliente::find($cuota->);
+            
             
         }
         else{

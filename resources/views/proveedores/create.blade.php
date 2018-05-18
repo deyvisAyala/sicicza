@@ -8,6 +8,8 @@
           <section class="wrapper">
       <div class="row" style="background-color: #b3cccc" >
         <div class="col-lg-12">
+         @include('alertas.request')
+
           <h3 class="page-header"><i class="fa fa-truck "></i> Registrar Proveedores</h3>
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Inicio</a></li>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Ventas</title>
+  <title>Factura</title>
 <style>
 .bigicon { 
     font-size: 35px;
@@ -141,18 +141,18 @@ td.sansserif {
 
           <article><!-- Aqui carga los datos del cua-->
             
-               <table border="3" width="10px" align="right" >
+               <table border="3" width="350px" align="right" >
           
                   <tr>
                     <td bgcolor="#ECF6CE">
-                       <p class="serif1">Cliente:______________________________________</p>   
+                       <p class="serif1">Cliente  :   <?=  $cli->nomCliente; ?> </p>   
             
-                       <p class="serif1">Dirección:____________________________________</p>
+                       <p class="serif1">Dirección  :  <?=  $cli->dirCliente; ?></p>
                   </td>
                   <td bgcolor="#ECF6CE">
-                       <p class="serif1">Dui:______________________________________</p>   
+                       <p class="serif1">Dui  :   <?=  $cli->dui; ?></p>   
             
-                       <p class="serif1">Nit:____________________________________</p>
+                       <p class="serif1">Nit  :  <?=  $cli->nit; ?> </p>
                   </td>
                 </tr>
               </table>
@@ -202,17 +202,33 @@ td.sansserif {
             </tr>
           @endforeach
            <tr align="right">
-              <td colspan="2" rowspan="1"><p class="serif"> </p></td>
+              <td colspan="2" rowspan="1"><p class="serif">
+
+                <?php
+                $suma=$suma+0.01;
+                  $f=new
+                  \NumberFormatter("es",
+                  \NumberFormatter::SPELLOUT);
+                  $cadena=$f->format(floor($suma));
+                  $decimales=explode('.',$suma);
+
+                  echo "El total a pagar es: ".$cadena." ".$decimales[1]." /100";
+            ?>
+               </p></td>
+
+
             <td colspan="3" rowspan="2">
               
-              <p class="serif">Suma: </p>
+            <?php
+                  $iva=$suma*0.13;
+                  $subTot=$suma-($suma*0.13);
+             ?>
             
-             <p class="serif">Iva:</p>
-             
-             <p class="serif">Sub-Total:</p>
-            <p class="serif">(-)Iva-Retenida:</p>
-            <p class="serif">Ventas Extensas:</p>
-             <p class="serif">Ventas Total: <?php  echo $suma;?></p>
+            <p class="serif">Iva:--------------------------$<?php  echo $iva;?></p>
+            <p class="serif">Sub-Total:--------------------$<?php  echo $subTot;?></p>
+            <p class="serif">(-)Iva-Retenida:--------------$00.00</p>
+            <p class="serif">Ventas Extensas:--------------$00.00</p>
+            <p class="serif">Ventas Total:-----------------$<?php  echo $suma;?></p>
             </td>
              </tr>
             

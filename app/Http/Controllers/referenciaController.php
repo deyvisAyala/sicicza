@@ -27,13 +27,14 @@ class referenciaController extends Controller
             'idCliente' => $request['idCliente'],     
         ]);
 
+
    $trab = \App\cliente::find($request['idCliente']);
    foreach ($trab as $valor)
    	{
         $trab->estCliente= FALSE;
         $trab->save();
     }
-  
+  \App\Bitacora::bitacora("Registro de nueva Referencia de Cliente: ".$trab->nomCliente);
      //adonde vamos
        return redirect('/referencia')->with('message','create');
     }
@@ -75,7 +76,7 @@ class referenciaController extends Controller
 
         $trab->save();
         
-
+              \App\Bitacora::bitacora("Modificacion de Referencia  ");
 
     return redirect('/referencia');
     }

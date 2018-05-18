@@ -60,7 +60,10 @@
                   <td>{{ $com->id}}</td>
                   <td>{{ $com->tipopago}}</td>
                   <td>${{ $com->montocompra}}</td>
-                  <td>{{ $com->fechacompra}}</td>
+                  <?php   
+                        $fecha=date("d-m-Y", strtotime("{{ $com->fechacompra}}"));
+                  ?>
+                  <td>{{ $fecha}}</td>
                   <td>{{ $com->nfactura}}</td>
                   <td>{!!Form::open(['route'=>['listaCompra.show',$com->id],'method'=>'GET'])!!}
                                             <input type="submit" name="" value="Detalle Compra"   class="btn btn-success " />

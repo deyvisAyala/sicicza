@@ -28,7 +28,7 @@ Route::resource('producto', 'ProductoController');
 Route::resource('stock', 'stockController');
 
 Route::resource( 'view','ventasController');
-Route::resource('kardex', 'controllerKardex');
+//Route::resource('kardex', 'controllerKardex');
 Route::resource('RegistroCliente', 'clienteController');
 
 Route::resource('compras', 'createcompraController');
@@ -87,7 +87,7 @@ Route::match(['get','post'],'factura','ventasController@pdfFactura');
 Route::match(['get','post'],'existencias','ProductoController@listaExsistencias');
 Route::match(['get','post'],'NoExistencias','ProductoController@listaNoExsistencias');
 Route::match(['get','post'],'ticked','cuotasController@vistaTicked');
-
+Route::match(['get','post'],'postGenerateBackup','HomeController@postGenerateBackup');
 
 //te importa todas las rutas de los controladores
 Auth::routes();

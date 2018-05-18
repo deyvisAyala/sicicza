@@ -35,6 +35,7 @@ class ventasController extends Controller
         $dt =date("Y/m/d", strtotime("$dt +1 month"));
         $prima=($request['total']+$request['prima']);
 
+
         \App\facturaVenta2::create([
              
             'fechav' => $request['fecha'],
@@ -43,12 +44,13 @@ class ventasController extends Controller
             'numfactura' => $request['numfactura'],
             'descripcion' => $request['descripcion'],
             //'idempl' => $request['codE'],
-
-
         ]);
+      
         $ids;
+        $monto;
         $gAux =\App\facturaVenta2::All();
         foreach ($gAux as $valor2) {
+           $monto=$valor2;
             $ids=$valor2->id;
         }
 
@@ -99,8 +101,9 @@ class ventasController extends Controller
                 
 
             ]);
-                    $c=$request['idcliente'];
-                    $cli=\App\cliente::find($c);
+                      \App\Bitacora::bitacora("Registro de nueva venta al contado #Factura : ".$request['numfactura']);
+                    $idCli=$request['idcliente'];
+                    $cli=\App\cliente::find($idCli);
 
 ///////////////////////////////REPORTE DE FACTURA/////////////////////
        
@@ -109,14 +112,14 @@ class ventasController extends Controller
        
         $date = date('d-m-Y');
         $date1 = date('g:i:s a');
-        
-
+       
+       
       $vistaurl="reportes.factura";
-      $view =  \View::make($vistaurl, compact('h', 'date','date1'))->render();
+      $view =  \View::make($vistaurl, compact('h','cli','date','date1'))->render();
       $pdf = \App::make('dompdf.wrapper');
       $pdf->loadHTML($view);
       
-     return $pdf->stream('Reporte Compras '.$date.'.pdf');
+     return $pdf->stream('Factura'.$date.'.pdf');
    
 ///////////////////////////FIN FACTURA/////////////////////////////// 
        
@@ -138,20 +141,30 @@ class ventasController extends Controller
 
             ]);
 
+                      \App\Bitacora::bitacora("Registro de nueva venta al credito #Factura : ".$request['numfactura']);
+/////////////////////////REPORTE DE CONTRATO DE CREDITO////////////////////////////
+                    $idCli=$request['idcliente'];
+                    $cli=\App\cliente::find($idCli);
+                    $tot=$request['total'];
+                    $cuo=$request['formap'];
+                    
+                    $date = date('d-m-Y');
+                    $date1 = date('g:i:s a');
+                     
+                     
+                    $vistaurl="reportes.letraCambio";
+                    $view =  \View::make($vistaurl, compact('cuo','tot','estado','cli','date','date1'))->render();
+                    $pdf = \App::make('dompdf.wrapper');
+                    $pdf->loadHTML($view);
+      
+     return $pdf->stream('Contrato Credito'.$date.'.pdf');
+////////////////////////////////////FIN CREDITO////////////////////////////////////
+
             }
 
-              $date = date('d-m-Y');
-                    $date1 = date('g:i:s a');
-                    
+             
 
-                  $vistaurl="reportes.factura";
-                  $view =  \View::make($vistaurl, compact('date','date1'))->render();
-                  $pdf = \App::make('dompdf.wrapper');
-                  $pdf->loadHTML($view);
-      
-     return $pdf->stream('Reporte Ventas '.$date.'.pdf');
-
-        return redirect('ventas/create')->with('message','create');
+        
     }
 
 
@@ -168,6 +181,7 @@ class ventasController extends Controller
     public function llenarXProducto($id)
     {
         //
+      //dd($id);
         $prod =\App\producto::mostrarxProve($id);
        return Response::json($prod);
        
@@ -292,6 +306,16 @@ class ventasController extends Controller
       $pdf->loadHTML($view);
       
      return $pdf->stream('Reporte Compras '.$date.'.pdf');
-    } */             
+    } */      
+
+
+
+
+    ////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
     
+
 }

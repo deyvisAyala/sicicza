@@ -60,7 +60,10 @@
                   <td>{{ $ven->id}}</td>
                   <td>{{ $ven->descripcion}}</td>
                   <td>${{ $ven->montov}}</td>
-                  <td>{{ $ven->fechav}}</td>
+                  <?php   
+                        $fecha=date("d-m-Y", strtotime("{{$ven->fechav}}"));
+                  ?>
+                  <td>{{ $fecha}}</td>
                   <td>{{ $ven->numfactura}}</td>
                   <td>{!!Form::open(['route'=>['ventas.show',$ven->id],'method'=>'GET'])!!}
                                             <input type="submit" name="" value="Detalle Venta"   class="btn btn-success " />

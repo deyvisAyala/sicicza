@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\detallesCompra;
+use App\detalleVenta;
 class ProductoController extends Controller
 {
 public function index() {  
@@ -34,6 +35,7 @@ public function index() {
             'idMarca' => $request['idMarca'],  
             'stock' => $request['stock'],         
         ]);
+              \App\Bitacora::bitacora("Registro de nuevo Producto: ".$request['nomProducto']);
      //adonde vamos
         return redirect('producto')->with('message','create');
     }
@@ -68,7 +70,8 @@ public function index() {
        
         //$trab->sueldoEmp = $request['salario'];
         //$trab->cargoEmp = $request['cargo'];
-        
+         \App\Bitacora::bitacora("Modificacion de Producto: ".$request['nomProducto']);
+
         
         //$trab->sexEmp = $request['sexo'];correoEmp
         //$trab->contraEmp = $request['desc'];
@@ -77,13 +80,15 @@ public function index() {
         if($aux=='2')
         {
             $trab->estProducto =false;
+             \App\Bitacora::bitacora("Se desactivo el producto: ".$trab->nomProducto);
         }
         if($aux=='3')
         {
             $trab->estProducto=true;
+            \App\Bitacora::bitacora("Se activo el producto: ".$trab->nomProducto);
         }
 
-
+         
         $trab->save();
         
 
@@ -102,15 +107,12 @@ public function index() {
     public function show($id)
     {
         //
-         $producto = productos::find($id);
-        
-
-         $comp=\App\detalles_compras::sacarComprasPorProductos($id);
-         $comp2=\App\detalle_ventas::sacarVentasPorProductos($id);
+       
+         $comp=\App\detallesCompra::sacarComprasPorProductos($id);
          
-
-        // $com=\App\compras::pro2($comp->id);
-        return view('inventario.kardex',compact('lotes','pro','comp','comp2')); 
+         $ventas=\App\detalleVenta::sacarVentasPorProductos($id);
+          
+        return view('productos.ProducKardex',compact('comp','ventas')); 
     }
 
     //////////////////////ESPACIO PARA LLAMADO Y CONSULTA DE REPORTES/////////////////////////////////

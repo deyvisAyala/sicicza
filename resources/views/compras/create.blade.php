@@ -69,7 +69,7 @@ $sum=0;
                                                      <div class=" col-md-1 col-md-offset-1 col-lg-1" ><td><b>Précio unitario:</b></div>
                                                      <div class="input-group input-group-lg-5 col-md-offset-0 col-lg-4">
                                                     <span class="input-group-addon"><i class="fa fa-money " style="color:MediumSeaGreen "></i></span>
-                                                    <input id="precio" name="precio" type="number" placeholder="Precio de compra unitario" class="form-control " min="1" max="99999" required onkeyup="sumar();">
+                                                    <input id="precio" name="precio" type="number" placeholder="Precio de compra unitario" class="form-control " min="1" step=".01" max="99999" required onkeyup="sumar();">
                                                 </div>
                                             </div>
 
